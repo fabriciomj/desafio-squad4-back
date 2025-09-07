@@ -1,0 +1,18 @@
+classDiagram
+    class Prato{
+      CharField nome
+      CharField ingredientes
+      FilePathField imagem_cardapio
+      FilePathField imagem_carrossel
+      DecimalField preco
+    }
+    class Avaliacao{
+      IntegerField nota
+      CharField nome_cliente
+      CharField resenha
+    }
+    class Promocao{
+      ForeignKey id_prato
+      IntegerField desconto
+    }
+    Promocao "1" --> Prato
