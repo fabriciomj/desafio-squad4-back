@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-4)9i8_*n_-(jp23i^p51ozh63&ifxez*m^_-)l(6_6__z$-1p6
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['fabriciomj.pythonanywhere.com']
+ALLOWED_HOSTS = ['fabriciomj.pythonanywhere.com', '127.0.0.1']
 
 
 # Application definition
