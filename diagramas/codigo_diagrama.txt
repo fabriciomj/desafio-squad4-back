@@ -15,4 +15,9 @@ classDiagram
       ForeignKey id_prato
       IntegerField desconto
     }
+    class Funcionario{
+        CharField nome
+        CharField funcao
+        FilePathField foto
+    }
     Promocao "1" --> Prato
