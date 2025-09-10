@@ -30,3 +30,8 @@ uv run manage.py runserver
 ```
 
 Então abra o link `http://127.0.0.1:8000/` no seu navegador. As modificações que você fizer e salvar no código irá atualizar automaticamente no servidor, se manté-lo aberto.
+
+### Linter e formatter
+
+Sempre antes de fazer um commit, rode o comando `uvx ruff format` para formatar o código e `uvx ruff check` para ver se o código passa pelas recomendações do Ruff.
+Caso não, avalie a sugestão que ele fizer e aplique-a ou não. Existe uma [extensão](https://marketplace.visualstudio.com/items?itemName=charliermarsh.ruff) do Ruff para o VSCode, caso queira usá-lo direto do editor.
