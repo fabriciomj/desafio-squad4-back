@@ -2,8 +2,8 @@ classDiagram
     class Prato{
       CharField nome
       CharField ingredientes
-      FilePathField imagem_cardapio
-      FilePathField imagem_carrossel
+      ImageField imagem_cardapio
+      ImageField imagem_carrossel
       DecimalField preco
     }
     class Avaliacao{
@@ -18,6 +18,6 @@ classDiagram
     class Funcionario{
         CharField nome
         CharField funcao
-        FilePathField foto
+        ImageField foto
     }
     Promocao "1" --> Prato
