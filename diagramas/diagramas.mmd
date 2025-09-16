@@ -11,13 +11,8 @@ classDiagram
       CharField nome_cliente
       CharField resenha
     }
-    class Promocao{
-      ForeignKey id_prato
-      IntegerField desconto
-    }
     class Funcionario{
         CharField nome
         CharField funcao
         ImageField foto
     }
-    Promocao "1" --> Prato
