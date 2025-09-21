@@ -28,8 +28,8 @@ def gerar_nome_arquivo(
 class Prato(models.Model):
     nome = models.CharField(max_length=30)
     ingredientes = models.CharField(max_length=250)
-    foto_cardapio = models.ImageField()
-    foto_carrossel = models.ImageField(blank=True)
+    foto_cardapio = models.ImageField(upload_to="pratos")
+    foto_carrossel = models.ImageField(blank=True, upload_to="pratos/destaque")
     preco = models.DecimalField(max_digits=7, decimal_places=2)
     adicionar_carrossel = models.BooleanField(
         verbose_name="Destacar Prato", default=False
@@ -44,7 +44,7 @@ class Avaliacao(models.Model):
     nome_cliente = models.CharField(max_length=30, verbose_name="Nome do Cliente")
     resenha = models.TextField()
     foto_cliente = models.ImageField(
-       verbose_name="Foto do Cliente"
+        verbose_name="Foto do Cliente", upload_to="avaliacoes"
     )
 
     def __str__(self):
@@ -54,7 +54,7 @@ class Avaliacao(models.Model):
 class Funcionario(models.Model):
     nome = models.CharField(max_length=40)
     cargo = models.CharField(max_length=30)
-    foto = models.ImageField()
+    foto = models.ImageField(upload_to="funcionarios")
     bio = models.TextField(verbose_name="Biografia")
 
     def __str__(self):
