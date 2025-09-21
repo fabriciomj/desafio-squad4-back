@@ -11,13 +11,18 @@ class Prato(models.Model):
     preco = models.DecimalField(max_digits=7, decimal_places=2)
     adicionar_carrossel = models.BooleanField(default=False)
 
+    def __str__(self):
+        return self.nome
+
 
 class Avaliacao(models.Model):
-    nota = models.IntegerField(
-        validators=[MinValueValidator(1), MaxValueValidator(5)])
+    nota = models.IntegerField(validators=[MinValueValidator(1), MaxValueValidator(5)])
     nome_cliente = models.CharField(max_length=30)
     resenha = models.TextField()
     foto_cliente = models.ImageField()
+
+    def __str__(self):
+        return self.nome_cliente
 
 
 class Funcionario(models.Model):
@@ -25,6 +30,9 @@ class Funcionario(models.Model):
     cargo = models.CharField(max_length=30)
     foto = models.ImageField()
     bio = models.TextField()
+
+    def __str__(self):
+        return f"{self.nome} - {self.cargo}"
 
 
 class Contato(models.Model):
@@ -38,6 +46,9 @@ class Contato(models.Model):
     email = models.EmailField()
     descricao = models.TextField(blank=True)
 
+    def __str__(self):
+        return f"{self.tipo_servico} - {self.nome} ({self.email})"
+
 
 class Reserva(models.Model):
     nome_cliente = models.CharField(max_length=100)
@@ -48,3 +59,6 @@ class Reserva(models.Model):
         validators=[MinValueValidator(1), MaxValueValidator(10)]
     )
     observacao = models.TextField()
+
+    def __str__(self):
+        return f"{self.nome_cliente} ({self.telefone}) - {self.data} {self.horario}"
