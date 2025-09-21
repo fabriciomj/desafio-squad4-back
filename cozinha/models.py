@@ -1,19 +1,28 @@
+import os
+
+from django.conf import settings
+from django.core.validators import MaxValueValidator, MinValueValidator
 from django.db import models
-
-from django.core.validators import MinValueValidator, MaxValueValidator
-
-from os import path
 
 
 def gerar_nome_arquivo(
-    img: models.ImageField, nome: models.CharField
+    m: models.Model, img: models.ImageField, nome: models.CharField
 ) -> str:
-    """Recebe um ImageField e um CharField e retorna um novo nome para o primeiro com base no segundo."""
+    """Recebe um Model, um ImageField e um CharField, retorna um novo nome para
+    o arquivo no formato 'caminho/id_nome_ultimonome.ext'."""
     nome_arquivo = img.name
-    bn = path.basename(nome_arquivo)
+    bn = os.path.basename(nome_arquivo)
     dir = nome_arquivo.removesuffix(bn)
-    ext = path.splitext(nome_arquivo)[-1]
-    return dir + nome.lower() + ext
+    ext = os.path.splitext(nome_arquivo)[-1]
+
+    novo_nome = nome.lower()
+    nome_split = novo_nome.split()
+    novo_nome = str(m.id) + "_" + nome_split[0]
+
+    if len(nome_split) > 1:
+        novo_nome += "_" + nome_split[-1]
+
+    return dir + novo_nome + ext
 
 
 class Prato(models.Model):
