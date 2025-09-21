@@ -1,0 +1,94 @@
+.carousel-container {
+    position: absolute;
+    /* tira do fluxo e coloca sobre a imagem */
+    bottom: 6%;
+    /* controla a altura do carrossel sobre a imagem */
+    left: 50%;
+    transform: translateX(-50%);
+    /* centraliza horizontalmente */
+    display: block;
+    align-items: center;
+    z-index: 10;
+    /* garante que fica por cima */
+    margin-bottom: 30px;
+}
+
+.carousel-track {
+    margin-bottom: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    /* mantém imagem + texto alinhados em cima */
+}
+
+.item {
+    display: flex;
+    flex-direction: column;
+    /* imagem em cima, texto embaixo */
+    align-items: center;
+    margin: 0 50px;
+    width: 120px;
+    /* tamanho fixo da “caixinha” */
+    transition: transform 0.3s;
+    z-index: 20;
+}
+
+.item img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.caption {
+    margin-top: 10px;
+    font-size: 1.15rem;
+    text-align: center;
+    color: white;
+    /* ou outra cor conforme seu layout */
+}
+
+.caption.center {
+    font-weight: bold;
+    color: #FFFFFF;
+    /* opcional: cor diferente para destacar */
+}
+
+
+.carousel {
+    position: relative;
+    /* referência para os botões */
+    display: flex;
+}
+
+
+.nav {
+    position: absolute;
+    top: 115px;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: white;
+}
+
+.nav.prev {
+    left: -60px;
+}
+
+.nav.next {
+    right: -60px;
+}
+
+
+.card-link {
+    margin-top: 8px;
+    /* espaço em relação ao texto */
+    font-size: 0.9rem;
+    color: #FFFFFF;
+    /* cor do link (ex: dourado) */
+    text-decoration: none;
+    /* remove sublinhado padrão */
+    transition: color 0.3s;
+}

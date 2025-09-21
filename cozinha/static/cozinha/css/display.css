@@ -1,0 +1,39 @@
+.display-container {
+    display: flex;
+    justify-content: start;
+    align-items: stretch;
+    gap: 64px;
+    width: 100%;
+    margin: 96px 0px;
+}
+
+.display-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.display-subtitle {
+    color: #A39671;
+    font-size: large;
+}
+
+.display-text {
+    color: black;
+}
+
+#ver-menu-btn {
+    margin-top: 12px;
+    padding: 15px 20px;
+    background-color: #f2ead3;
+    border-radius: 50px;
+    font-size: large;
+    font-weight: bold;
+    cursor: pointer;
+    width: fit-content;
+}
+
+#ver-menu-btn:hover {
+    background-color: #e0d4b3;
+    /* cor ao passar o mouse */
+}

@@ -1,0 +1,86 @@
+#servicos {
+    padding: 10vw;
+}
+
+#servicos h1 {
+    color: #3F2305;
+    font-size: 2rem;
+    line-height: 2rem;
+    margin-bottom: 0.4rem;
+}
+
+#servicos h4 {
+    margin-top: 0.6rem;
+    margin-bottom: 2.5rem;
+    color: #3F2305;
+    font-size: 1rem;
+    line-height: normal;
+    font-weight: 500;
+}
+
+#servicos .card-container {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1.2rem;
+    margin: 1rem 0;
+}
+
+#servicos .card {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: stretch;
+    gap: 0px;
+    width: 100%;
+    height: 200px; /* Fixed height for the card */
+    background-color: white;
+    color: black;
+    font-family: "Montserrat", sans-serif;
+    border: 2px solid #DED7C2;
+    border-radius: 18px;
+    overflow: hidden;
+}
+
+#servicos img {
+    display: block;
+    width: 40%;
+    height: 100%;
+    min-width: 35px;
+    object-fit: cover;
+    flex-shrink: 0; 
+}
+
+#servicos .card-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.75rem;
+    flex: 1; 
+    padding: 16px;
+}
+
+#servicos h3 {
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    font-size: 0.85rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+}
+
+#servicos span {
+    margin-bottom: 0.75rem;
+    font-weight: normal;
+    font-size: 0.75rem;
+    padding: 0;
+    line-height: 1.4;
+}
+
+#servicos a {
+    margin-bottom: 0;
+    font-weight: 500;
+    font-size: 0.75rem;
+    text-decoration-line: none;
+    cursor: pointer;
+}

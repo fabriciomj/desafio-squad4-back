@@ -1,0 +1,84 @@
+footer {
+    color: black;
+    font-family: "DM Sans", sans-serif;
+    background-color: #DED7C2;
+}
+
+footer h3 {
+    text-transform: uppercase;
+}
+
+footer a {
+    color: black;
+    text-decoration: none;
+}
+
+.info-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 64px;
+    gap: 28px;
+}
+
+#footer-logo {
+    max-width: fit-content;
+}
+
+#footer_restaurante {
+    display: block;
+    /* remove espaço extra embaixo da img */
+    width: 640px;
+    height: 720px;
+    object-fit: cover;
+    margin-right: 130px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    margin-bottom: 50px;
+    margin-top: 50px;
+}
+
+form input,
+form select,
+form textarea {
+    padding: 7px 10px;
+    border: 2px solid #3F2305;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-family: inherit;
+    background-color: #DED7C2;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+
+.formrow {
+    display: flex;
+    gap: 12px;
+}
+
+.formrow input {
+    flex: 1;
+    min-width: 0;
+}
+
+#submit {
+    background-color: #3F2305;
+    color: #FFFF;
+    padding: 10px 15px;
+    border-radius: 8px;
+    width: fit-content;
+    /* faz o botão ficar só do tamanho do texto */
+    cursor: pointer;
+    font-weight: bold;
+}
+
+#submit:hover {
+    background-color: #8f5517;
+}
