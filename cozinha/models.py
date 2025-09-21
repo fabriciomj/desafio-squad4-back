@@ -22,11 +22,7 @@ class Avaliacao(models.Model):
     foto_cliente = models.ImageField()
 
     def __str__(self):
-        if self.nota > 1:
-            estrela_str = "estrelas"
-        else:
-            estrela_str = "estrela"
-        return f"{self.nome_cliente} - {self.nota} {estrela_str}"
+        return self.nome_cliente
 
 
 class Funcionario(models.Model):
