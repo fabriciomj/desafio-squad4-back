@@ -13,7 +13,8 @@ class Prato(models.Model):
 
 
 class Avaliacao(models.Model):
-    nota = models.IntegerField(validators=[MinValueValidator(1), MaxValueValidator(5)])
+    nota = models.IntegerField(
+        validators=[MinValueValidator(1), MaxValueValidator(5)])
     nome_cliente = models.CharField(max_length=30)
     resenha = models.TextField()
     foto_cliente = models.ImageField()
@@ -39,7 +40,7 @@ class Contato(models.Model):
 
 
 class Reserva(models.Model):
-    nome_cliente = models.CharField()
+    nome_cliente = models.CharField(max_length=100)
     telefone = models.CharField(max_length=11)
     data = models.DateField()
     horario = models.DateTimeField()
