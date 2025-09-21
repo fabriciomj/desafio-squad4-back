@@ -25,6 +25,14 @@ def gerar_nome_arquivo(
     return dir + novo_nome + ext
 
 
+def renomear_imagem(path: str, novo_nome: str):
+    """Recebe o path de um ImageField e o possível novo nome para o arquivo,
+    renomeando o arquivo se já existir na pasta media."""
+    if os.path.exists(path):
+        caminho_novo = path.join(settings.MEDIA_ROOT, novo_nome)
+        os.rename(path, caminho_novo)
+
+
 class Prato(models.Model):
     nome = models.CharField(max_length=30)
     ingredientes = models.CharField(max_length=250)
@@ -34,6 +42,16 @@ class Prato(models.Model):
     adicionar_carrossel = models.BooleanField(
         verbose_name="Destacar Prato", default=False
     )
+
+    def save(self, **kwargs):
+        novo_nome = gerar_nome_arquivo(self, self.foto_cardapio, self.nome)
+        renomear_imagem(self.foto_cardapio.path, novo_nome)
+        self.foto_cardapio.name = novo_nome
+        if self.foto_carrossel:
+            novo_nome = gerar_nome_arquivo(self, self.foto_carrossel, self.nome)
+            renomear_imagem(self.foto_carrossel.path, novo_nome)
+            self.foto_carrossel.name = novo_nome
+        super().save(**kwargs)
 
     def __str__(self):
         return self.nome
@@ -47,6 +65,12 @@ class Avaliacao(models.Model):
         verbose_name="Foto do Cliente", upload_to="avaliacoes"
     )
 
+    def save(self, **kwargs):
+        novo_nome = gerar_nome_arquivo(self, self.foto_cliente, self.nome_cliente)
+        renomear_imagem(self.foto_cliente.path, novo_nome)
+        self.foto_cliente.name = novo_nome
+        super().save(**kwargs)
+
     def __str__(self):
         return self.nome_cliente
 
@@ -56,6 +80,12 @@ class Funcionario(models.Model):
     cargo = models.CharField(max_length=30)
     foto = models.ImageField(upload_to="funcionarios")
     bio = models.TextField(verbose_name="Biografia")
+
+    def save(self, **kwargs):
+        novo_nome = gerar_nome_arquivo(self, self.foto, self.nome)
+        renomear_imagem(self.foto.path, novo_nome)
+        self.foto.name = novo_nome
+        super().save(**kwargs)
 
     def __str__(self):
         return f"{self.nome} - {self.cargo}"
