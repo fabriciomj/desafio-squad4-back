@@ -31,7 +31,9 @@ class Prato(models.Model):
     foto_cardapio = models.ImageField()
     foto_carrossel = models.ImageField(blank=True)
     preco = models.DecimalField(max_digits=7, decimal_places=2)
-    adicionar_carrossel = models.BooleanField(default=False)
+    adicionar_carrossel = models.BooleanField(
+        verbose_name="Destacar Prato", default=False
+    )
 
     def __str__(self):
         return self.nome
