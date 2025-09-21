@@ -2,6 +2,19 @@ from django.db import models
 
 from django.core.validators import MinValueValidator, MaxValueValidator
 
+from os import path
+
+
+def gerar_nome_arquivo(
+    img: models.ImageField, nome: models.CharField
+) -> str:
+    """Recebe um ImageField e um CharField e retorna um novo nome para o primeiro com base no segundo."""
+    nome_arquivo = img.name
+    bn = path.basename(nome_arquivo)
+    dir = nome_arquivo.removesuffix(bn)
+    ext = path.splitext(nome_arquivo)[-1]
+    return dir + nome.lower() + ext
+
 
 class Prato(models.Model):
     nome = models.CharField(max_length=30)
