@@ -132,7 +132,11 @@
 
     <script>
         function changeWindowHref(template) {
-            window.location.href = `{% url '${template}' %}`
+            if (template == "cardapio") {
+                window.location.href = `{% url 'cardapio' %}`
+            } else if (tempalte == "index") {
+                window.location.href = `{% url 'index' %}`
+            }
         }
     </script>
     <div class="modal" id="sobre-nos">
@@ -141,7 +145,8 @@
                 <img src="{% static 'cozinha/images/voltar.svg' %}">
             </button>
             <div class="header-container">
-                <img id="logo" src="{% static 'cozinha/images/logo_dropdown.svg' %}" onclick="changeWindowHref('index')">
+                <img id="logo" src="{% static 'cozinha/images/logo_dropdown.svg' %}"
+                    onclick="changeWindowHref('index')">
             </div>
         </div>
         <div class="content-container">
