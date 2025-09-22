@@ -9,6 +9,7 @@ def index(request):
     if request.method == "POST":
         form = ContatoForm(request.POST)
         if form.is_valid():
+            form.save()
             return HttpResponseRedirect(reverse("index"))
     else:
         form = ContatoForm()
