@@ -1,0 +1,502 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/logo.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cardápio</title>
+
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="style/cardapio.css">
+    <link rel="stylesheet" href="style/navbar.css">
+    <link rel="stylesheet" href="style/dropdown.css">
+    <link rel="stylesheet" href="style/modal.css">
+    <link rel="stylesheet" href="style/modal-menu-executivo.css">
+    <link rel="stylesheet" href="style/modal-servicos.css">
+    <link rel="stylesheet" href="style/modal-sobre-nos.css">
+    <link rel="stylesheet" href="style/carrossel.css">
+    <link rel="stylesheet" href="style/grid.css">
+    <link rel="stylesheet" href="style/section.css">
+    <link rel="stylesheet" href="style/menu.css">
+    <link rel="stylesheet" href="style/display.css">
+    <link rel="stylesheet" href="style/servicos.css">
+    <link rel="stylesheet" href="style/footer.css">
+
+</head>
+
+<body>
+    <div class="modal-backdrop" id="modal-backdrop"></div>
+
+    <div id="dropdown-container">
+        <div class="dropdown-content">
+            <div class="dropdown-inner">
+                <div>
+                    <img class="dropdown-logo" src="../public/logo_dropdown.svg">
+                    <div class="menu-bar" style="margin: 0;"></div>
+                </div>
+            </div>
+            <button id="dropdown-close-btn">
+                <img src="../public/x.svg">
+            </button>
+        </div>
+        <div class="dropdown-menu">
+            <a id="menu-executivo-btn">Menu Executivo</a>
+            <a id="contratar-btn">Contratar Agora</a>
+            <a id="sobre-nos-btn">Sobre Nós</a>
+            <a id="cardapio-btn" href="cardapio.html">Cardápio</a>
+            <a id="servicos-btn">Serviços</a>
+        </div>
+    </div>
+
+    <div class="modal" id="menu-executivo">
+        <div class="modal-container">
+            <div>
+                <h1>Menu Executivo</h1>
+                <div class="section-title-bar"></div>
+                <h4 class="menu-executivo subtitle">01 Entrada + 01 Prato principal + 01 Sobremesa</h4>
+            </div>
+            <button class="modal-close-btn" id="menu-executivo-close-btn">
+                <img src="../public/x_dark.svg">
+            </button>
+        </div>
+        <div>
+            <h3>Entrada</h3>
+            <div class="menu-bar dotted"></div>
+            <div class="items-container">
+                <span>BURRATA ARTESANAL COM PESTO DE RÚCULA E TOMATES CÍTRICOS</span>
+                <span>POLENTA CREMOSA COM LINGUIÇA COM REQUEIJÃO AO MOLHO DE TOMATE</span>
+                <span>STEAK TARTARE DE MIGNON COM OVO DE CODORNA FRITO E BATATA FRITA</span>
+            </div>
+
+            <h3>Prato Principal</h3>
+            <div class="menu-bar dotted"></div>
+            <div class="items-container">
+                <span>CUPIM NA MANTEIGA DE GARRAFA, MANDIOCA COZIDA E FAROFA DE BANANA</span>
+                <span>RISOTO DE POLVO COM AÇAFRÃO, PARMESÃO, TOMATE CEREJA E DILL</span>
+                <span>MEDALHÃO DE MIGNON COM RISOTO DE BRIE, ERVAS E MOLHO ROTI</span>
+            </div>
+
+            <h3>Sobremesa</h3>
+            <div class="menu-bar dotted"></div>
+            <div class="items-container">
+                <span>PUDIM DE CUMARU COM CALDA DE FRUTAS VERMELHAS E SEMENTES DE PAPOULA</span>
+                <span>MOUSSE DE CHOCOLATE BELGA COM CARAMELO E SAL MALDON</span>
+                <span>BRIGADEIRO DE MARACUJÁ, FRUTAS VERMELHAS E SORBET DE MANGA</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="servicos">
+        <div class="modal-container">
+            <div></div>
+            <button class="modal-close-btn" id="servicos-close-btn">
+                <img src="../public/x_dark.svg">
+            </button>
+        </div>
+        <div>
+            <div class="card-container">
+                <div class="card">
+                    <img src="../public/servicos_modal_1.svg">
+                    <div class="card-content">
+                        <h3>PERSONAL CHEF</h3>
+                        <span>Desde jantares íntimos até celebrações especiais, nosso personal chef proporcionará uma
+                            experiência
+                            culinária exclusiva e sob medida.</span>
+                        <a>Contratar agora</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img src="../public/servicos_modal_2.svg">
+                    <div class="card-content">
+                        <h3>BUFFET</h3>
+                        <span>De acordo com suas preferências, você terá uma experiência gastronômica que surpreenderá e
+                            encantará
+                            seus convidados.</span>
+                        <a>Contratar agora</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img src="../public/servicos_modal_3.svg">
+                    <div class="card-content">
+                        <h3>JANTAR TEMÁTICO</h3>
+                        <span>Uma experiência gastronômica temática, cuidadosamente personalizada de acordo com suas
+                            preferências.</span>
+                        <a>Contratar agora</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="sobre-nos">
+        <div class="modal-container">
+            <button class="modal-close-btn" id="sobre-nos-close-btn">
+                <img src="../public/voltar.svg">
+            </button>
+            <div class="header-container">
+                <img id="logo" src="../public/logo_dropdown.svg" onclick="window.location.href='../index.html'">
+            </div>
+        </div>
+        <div class="content-container">
+            <div class="menu-bar modal-bar-inline"></div>
+            <h2>QUEM SOMOS NÓS?</h2>
+            <img src="../public/restaurante.svg">
+            <p>
+                Nosso restaurante une sofisticação e sabor em cada detalhe. Inspirados pela alta gastronomia,
+                criamos pratos que combinam ingredientes frescos, técnicas refinadas e apresentação impecável.
+                Mais do que uma refeição, oferecemos uma experiência única, onde tradição e inovação se encontram
+                para encantar cada momento à mesa.
+            </p>
+            <div class="menu-bar modal-bar-inline"></div>
+            <h2>NOSSA EQUIPE</h2>
+
+            <div class="card-container">
+                <img src="../public/benjamin_matos.svg">
+                <div class="card-content">
+                    <h4>CHEF EXECUTIVO</h4>
+                    <div class="menu-bar card-bar"></div>
+                    <h5>BENJAMIN MATOS</h5>
+                    <span>
+                        Italiano de nascimento, Lorenzo traz em sua bagagem mais de
+                        20 anos de experiência em restaurantes estrelados Michelin.
+                        Sua cozinha combina tradição mediterrânea com inovação
+                        contemporânea.
+                    </span>
+                </div>
+            </div>
+
+            <div class="card-container">
+                <img src="../public/isabella_duarte.svg">
+                <div class="card-content">
+                    <h4>Chef Pâtissier</h4>
+                    <div class="menu-bar card-bar"></div>
+                    <h5>Isabella Duarte</h5>
+                    <span>
+                        Especialista em confeitaria francesa, Isabella é responsável
+                        por nossas sobremesas autorais, unindo técnica refinada e um
+                        toque criativo que transforma cada final de refeição em poesia.
+                    </span>
+                </div>
+            </div>
+
+            <div class="card-container">
+                <img src="../public/rafael_monteiro.svg">
+                <div class="card-content">
+                    <h4>Sommelier</h4>
+                    <div class="menu-bar card-bar"></div>
+                    <h5>Rafael Monteiro</h5>
+                    <span>
+                        Apaixonado por vinhos, Rafael seleciona rótulos exclusivos
+                        e harmonizações perfeitas para realçar cada prato do nosso
+                        cardápio.
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="navbar">
+        <div id="navbar-container">
+            <button id="dropdown-toggle-btn">
+                <img src="../public/navbar_toggle.svg">
+            </button>
+            <img id="logo" src="/public/logo.svg" onclick="window.location.href='../index.html'">
+            <div id="navbar-btn-container">
+                <button class="navbar-btn">Home</button>
+                <button class="navbar-btn" onclick="window.location.href='cardapio.html'">Cardápio</button>
+                <button class="navbar-btn">Sobre nós</button>
+            </div>
+            <button id="reserva-btn">RESERVAR AGORA</button>
+        </div>
+    </div>
+    <div class="svg-title-container2">
+        <h1 class="svg-title2">Cardápio</h1>
+        <div class="svg-title-bar2"></div>
+
+        <section>
+            <div class="svg-title-container2">
+                <h3>Especialidades</h3>
+                <div class="svg-title-bar2"></div>
+            </div>
+            <div class="menu-container2" id="menu1">
+                <div class="menu-card">
+                    <img src="../public/baunilha.jpeg" alt="Baunilha" class="menu-img" />
+                    <div class="menu-text">
+                        <h3>Carpaccio di Manzo al Tartufo</h3>
+                        <hr />
+                        <p>
+                            Finas lâminas de filé-mignon, lascas de parmesão, rúcula fresca,
+                            azeite trufado e flor de sal.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="menu-card">
+                    <img src="../public/baunilha.jpeg" alt="Baunilha" class="menu-img" />
+                    <div class="menu-text">
+                        <h3>Carpaccio di Manzo al Tartufo</h3>
+                        <hr />
+                        <p>
+                            Finas lâminas de filé-mignon, lascas de parmesão, rúcula fresca,
+                            azeite trufado e flor de sal.
+                        </p>
+                    </div>
+                </div>
+                <div class="menu-card">
+                    <img src="../public/baunilha.jpeg" alt="Baunilha" class="menu-img" />
+                    <div class="menu-text">
+                        <h3>Carpaccio di Manzo al Tartufo</h3>
+                        <hr />
+                        <p>
+                            Finas lâminas de filé-mignon, lascas de parmesão, rúcula fresca,
+                            azeite trufado e flor de sal.
+                        </p>
+                    </div>
+                </div>
+                <div class="menu-card hidden">
+                    <img src="../public/baunilha.jpeg" alt="Baunilha" class="menu-img" />
+                    <div class="menu-text">
+                        <h3>Carpaccio di Manzo al Tartufo</h3>
+                        <hr />
+                        <p>
+                            Finas lâminas de filé-mignon, lascas de parmesão, rúcula fresca,
+                            azeite trufado e flor de sal.
+                        </p>
+                    </div>
+                </div>
+                <div class="menu-card hidden">
+                    <img src="../public/baunilha.jpeg" alt="Baunilha" class="menu-img" />
+                    <div class="menu-text">
+                        <h3>Carpaccio di Manzo al Tartufo</h3>
+                        <hr />
+                        <p>
+                            Finas lâminas de filé-mignon, lascas de parmesão, rúcula fresca,
+                            azeite trufado e flor de sal.
+                        </p>
+                    </div>
+                </div>
+                <div class="menu-card hidden">
+                    <img src="../public/baunilha.jpeg" alt="Baunilha" class="menu-img" />
+                    <div class="menu-text">
+                        <h3>Carpaccio di Manzo al Tartufo</h3>
+                        <hr />
+                        <p>
+                            Finas lâminas de filé-mignon, lascas de parmesão, rúcula fresca,
+                            azeite trufado e flor de sal.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <button class="verMaisBtn" data-target="menu1">Ver mais</button>
+        </section>
+
+        <section>
+            <div class="svg-title-container2">
+                <h3>Prato Principal</h3>
+                <div class="svg-title-bar2"></div>
+            </div>
+            <div class="menu-container2" id="menu2">
+                <div class="menu-card">
+                    <img src="../public/baunilha.jpeg" alt="Baunilha" class="menu-img" />
+                    <div class="menu-text">
+                        <h3>Carpaccio di Manzo al Tartufo</h3>
+                        <hr />
+                        <p>
+                            Finas lâminas de filé-mignon, lascas de parmesão, rúcula fresca,
+                            azeite trufado e flor de sal.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="menu-card">
+                    <img src="../public/baunilha.jpeg" alt="Baunilha" class="menu-img" />
+                    <div class="menu-text">
+                        <h3>Carpaccio di Manzo al Tartufo</h3>
+                        <hr />
+                        <p>
+                            Finas lâminas de filé-mignon, lascas de parmesão, rúcula fresca,
+                            azeite trufado e flor de sal.
+                        </p>
+                    </div>
+                </div>
+                <div class="menu-card">
+                    <img src="../public/baunilha.jpeg" alt="Baunilha" class="menu-img" />
+                    <div class="menu-text">
+                        <h3>Carpaccio di Manzo al Tartufo</h3>
+                        <hr />
+                        <p>
+                            Finas lâminas de filé-mignon, lascas de parmesão, rúcula fresca,
+                            azeite trufado e flor de sal.
+                        </p>
+                    </div>
+                </div>
+                <div class="menu-card hidden">
+                    <img src="../public/baunilha.jpeg" alt="Baunilha" class="menu-img" />
+                    <div class="menu-text">
+                        <h3>Carpaccio di Manzo al Tartufo</h3>
+                        <hr />
+                        <p>
+                            Finas lâminas de filé-mignon, lascas de parmesão, rúcula fresca,
+                            azeite trufado e flor de sal.
+                        </p>
+                    </div>
+                </div>
+                <div class="menu-card hidden">
+                    <img src="../public/baunilha.jpeg" alt="Baunilha" class="menu-img" />
+                    <div class="menu-text">
+                        <h3>Carpaccio di Manzo al Tartufo</h3>
+                        <hr />
+                        <p>
+                            Finas lâminas de filé-mignon, lascas de parmesão, rúcula fresca,
+                            azeite trufado e flor de sal.
+                        </p>
+                    </div>
+                </div>
+                <div class="menu-card hidden">
+                    <img src="../public/baunilha.jpeg" alt="Baunilha" class="menu-img" />
+                    <div class="menu-text">
+                        <h3>Carpaccio di Manzo al Tartufo</h3>
+                        <hr />
+                        <p>
+                            Finas lâminas de filé-mignon, lascas de parmesão, rúcula fresca,
+                            azeite trufado e flor de sal.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <button class="verMaisBtn" data-target="menu2">Ver mais</button>
+        </section>
+        <section>
+            <div class="svg-title-container2">
+                <h3>Sobremesas</h3>
+                <div class="svg-title-bar2"></div>
+            </div>
+            <div class="menu-container2" id="menu3">
+                <div class="menu-card">
+                    <img src="../public/baunilha.jpeg" alt="Baunilha" class="menu-img" />
+                    <div class="menu-text">
+                        <h3>Carpaccio di Manzo al Tartufo</h3>
+                        <hr />
+                        <p>
+                            Finas lâminas de filé-mignon, lascas de parmesão, rúcula fresca,
+                            azeite trufado e flor de sal.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="menu-card">
+                    <img src="../public/baunilha.jpeg" alt="Baunilha" class="menu-img" />
+                    <div class="menu-text">
+                        <h3>Carpaccio di Manzo al Tartufo</h3>
+                        <hr />
+                        <p>
+                            Finas lâminas de filé-mignon, lascas de parmesão, rúcula fresca,
+                            azeite trufado e flor de sal.
+                        </p>
+                    </div>
+                </div>
+                <div class="menu-card">
+                    <img src="../public/baunilha.jpeg" alt="Baunilha" class="menu-img" />
+                    <div class="menu-text">
+                        <h3>Carpaccio di Manzo al Tartufo</h3>
+                        <hr />
+                        <p>
+                            Finas lâminas de filé-mignon, lascas de parmesão, rúcula fresca,
+                            azeite trufado e flor de sal.
+                        </p>
+                    </div>
+                </div>
+                <div class="menu-card hidden">
+                    <img src="../public/baunilha.jpeg" alt="Baunilha" class="menu-img" />
+                    <div class="menu-text">
+                        <h3>Carpaccio di Manzo al Tartufo</h3>
+                        <hr />
+                        <p>
+                            Finas lâminas de filé-mignon, lascas de parmesão, rúcula fresca,
+                            azeite trufado e flor de sal.
+                        </p>
+                    </div>
+                </div>
+                <div class="menu-card hidden">
+                    <img src="../public/baunilha.jpeg" alt="Baunilha" class="menu-img" />
+                    <div class="menu-text">
+                        <h3>Carpaccio di Manzo al Tartufo</h3>
+                        <hr />
+                        <p>
+                            Finas lâminas de filé-mignon, lascas de parmesão, rúcula fresca,
+                            azeite trufado e flor de sal.
+                        </p>
+                    </div>
+                </div>
+                <div class="menu-card hidden">
+                    <img src="../public/baunilha.jpeg" alt="Baunilha" class="menu-img" />
+                    <div class="menu-text">
+                        <h3>Carpaccio di Manzo al Tartufo</h3>
+                        <hr />
+                        <p>
+                            Finas lâminas de filé-mignon, lascas de parmesão, rúcula fresca,
+                            azeite trufado e flor de sal.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <button class="verMaisBtn" data-target="menu3">Ver mais</button>
+        </section>
+    </div>
+
+    <footer>
+        <div style="display: flex; justify-content: center; align-items: stretch; width: 100%;">
+            <div class="info-container">
+                <img id="footer-logo" src="../public/footer_logo.svg">
+            </div>
+
+            <div class="info-container">
+                <h3>Contato</h3>
+
+                <div style="display: flex; flex-direction: column;">
+                    <a href="">+55 21 99999-9999</a>
+                    <a href="">contato@lobocozinha.com</a>
+                </div>
+
+                <div style="display: flex; flex-direction: column;">
+                    <span>Rua ali perto, 89 - Barra da Tijuca</span>
+                    <span>Rio de Janeiro - RJ</span>
+                </div>
+
+                <div>
+                    <button class="social-media-btn">
+                        <img src="../public/logo_instagram.svg">
+                    </button>
+                    <button class="social-media-btn">
+                        <img src="../public/logo_facebook.svg">
+                    </button>
+                    <button class="social-media-btn">
+                        <img src="../public/logo_youtube.svg">
+                    </button>
+                </div>
+            </div>
+
+            <div class="info-container">
+                <h3>Informações</h3>
+                <div style="display: flex; flex-direction: column;">
+                    <a href="">Reservas</a>
+                    <a href="">Personal Chef</a>
+                    <a href="">Buffet Personalizado</a>
+                    <a href="">Jantar temático</a>
+                </div>
+                <span>EJECT © Alguns Direitos Reservados</span>
+            </div>
+        </div>
+    </footer>
+
+    <script type="module" src="script/dropdown.js"></script>
+    <script type="module" src="script/carrossel.js"></script>
+    <script type="module" src="script/cardapio.js"></script>
+</body>
+
+</html>
