@@ -105,7 +105,7 @@ class Contato(models.Model):
     descricao = models.TextField(blank=True, verbose_name="Descrição")
 
     def __str__(self):
-        return f"{self.tipo_servico} - {self.nome} ({self.email})"
+        return f"{self.nome_cliente} ({self.email}) - {self.TIPOS_SERVICOS[self.tipo_servico]}"
 
 
 class Reserva(models.Model):
