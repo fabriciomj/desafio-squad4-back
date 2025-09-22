@@ -44,7 +44,7 @@
             <a id="menu-executivo-btn">Menu Executivo</a>
             <a id="contratar-btn">Contratar Agora</a>
             <a id="sobre-nos-btn">Sobre Nós</a>
-            <a href="src/cardapio.html" id="cardapio-btn">Cardápio</a>
+            <a href="{% url 'cardapio' %}'" id="cardapio-btn">Cardápio</a>
             <a id="servicos-btn">Serviços</a>
         </div>
     </div>
@@ -95,7 +95,12 @@
             <img id="logo" src="{% static 'cozinha/images/logo.svg' %}">
             <div id="navbar-btn-container">
                 <button class="navbar-btn">Home</button>
-                <button class="navbar-btn" onclick="window.location.href='src/cardapio.html'">Cardápio</button>
+                <button class="navbar-btn" onclick="changeWindowHref()">Cardápio</button>
+                <script>
+                    function changeWindowHref() {
+                        window.location.href = `{% url 'cardapio' %}`
+                    }
+                </script>
                 <button class="navbar-btn">Sobre nós</button>
             </div>
             <button id="reserva-btn">RESERVAR AGORA</button>
