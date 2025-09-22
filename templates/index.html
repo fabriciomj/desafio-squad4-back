@@ -313,21 +313,18 @@
             <img src="{% static 'cozinha/images/footer_restaurante.svg' %}" alt="" id="footer_restaurante" width="640px"
                 height="720px">
             <div style="display: flex; flex-direction: column;">
-                <form>
+                <form action="{% url 'index' %}" method="post">
+                    {% csrf_token %}
                     <div class="section-title-container">
                         <h1 class="section-title">Entre em contato</h1>
                         <div class="section-title-bar"></div>
                     </div>
-
-                    <select name="servico" id="formServico">
-                        <option value="Serviço">Serviço</option>
-                        <option value="Lorem ipsum">Lorem ipsum</option>
-                    </select>
+                    {{ form.tipo_servico }}
                     <div class="formrow">
-                        <input type="text" name="nome" id="formNome" placeholder="Seu nome">
-                        <input type="text" name="email" id="formEmail" placeholder="Email">
+                        {{ form.nome_cliente }}
+                        {{ form.email }}
                     </div>
-                    <input type="text" name="descricao" id="formDescricao" placeholder="Descrição (opcional)">
+                    {{ form.descricao }}
                     <button id="submit">Enviar</button>
                 </form>
                 <img src="{% static 'cozinha/images/footer_mapa.svg' %}" width="435" height="254" alt="">
