@@ -87,6 +87,17 @@
         </div>
     </div>
 
+    <script>
+    function changeWindowHref(template) {
+        if (template == "cardapio") {
+            window.location.href = `{% url 'cardapio' %}`
+        } else if (template == "index") {
+            window.location.href = `{% url 'index' %}`
+        } else if (template == "sobre") {
+            window.location.href = `{% url 'sobre' %}`
+        }
+    }
+    </script>
     <div id="navbar">
         <div id="navbar-container">
             <button id="dropdown-toggle-btn">
@@ -94,14 +105,9 @@
             </button>
             <img id="logo" src="{% static 'cozinha/images/logo.svg' %}">
             <div id="navbar-btn-container">
-                <button class="navbar-btn">Home</button>
-                <button class="navbar-btn" onclick="changeWindowHref()">Cardápio</button>
-                <script>
-                    function changeWindowHref() {
-                        window.location.href = `{% url 'cardapio' %}`
-                    }
-                </script>
-                <button class="navbar-btn">Sobre nós</button>
+                <button class="navbar-btn" onclick="changeWindowHref('index')">Home</button>
+                <button class="navbar-btn" onclick="changeWindowHref('cardapio')">Cardápio</button>
+                <button class="navbar-btn" onclick="changeWindowHref('sobre')">Sobre nós</button>
             </div>
             <button id="reserva-btn">RESERVAR AGORA</button>
         </div>

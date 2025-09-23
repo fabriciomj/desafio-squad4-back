@@ -134,8 +134,10 @@
         function changeWindowHref(template) {
             if (template == "cardapio") {
                 window.location.href = `{% url 'cardapio' %}`
-            } else if (tempalte == "index") {
+            } else if (template == "index") {
                 window.location.href = `{% url 'index' %}`
+            } else if (template == "sobre") {
+                window.location.href = `{% url 'sobre' %}`
             }
         }
     </script>
@@ -214,9 +216,9 @@
             </button>
             <img id="logo" src="{% static 'cozinha/images/navbar_toggle.svg' %}" onclick="changeWindowHref('index')">
             <div id="navbar-btn-container">
-                <button class="navbar-btn">Home</button>
+                <button class="navbar-btn" onclick="changeWindowHref('index')">Home</button>
                 <button class="navbar-btn" onclick="changeWindowHref('cardapio')">Cardápio</button>
-                <button class="navbar-btn">Sobre nós</button>
+                <button class="navbar-btn" onclick="changeWindowHref('sobre')">Sobre nós</button>
             </div>
             <button id="reserva-btn">RESERVAR AGORA</button>
         </div>
