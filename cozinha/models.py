@@ -3,6 +3,7 @@ import uuid
 
 from django.core.validators import MaxValueValidator, MinValueValidator
 from django.db import models
+from PIL import Image
 
 
 def upload_pratos(_, filename):
@@ -54,6 +55,10 @@ class Prato(models.Model):
 
     def save(self, **kwargs):
         super().save(**kwargs)
+        img = Image.open(self.foto.path)
+        if img.height > 225 or img.width > 225:
+            img = img.resize((225, 225))
+            img.save(self.foto.path)
 
     def __str__(self):
         return self.nome
