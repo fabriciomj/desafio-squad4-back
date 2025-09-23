@@ -7,6 +7,7 @@ from .models import Prato
 
 
 def index(request):
+    destaques = Prato.objects.filter(tipo__exact="E")
     if request.method == "POST":
         form = ContatoForm(request.POST)
         if form.is_valid():
@@ -14,7 +15,7 @@ def index(request):
             return HttpResponseRedirect(reverse("index"))
     else:
         form = ContatoForm()
-    return render(request, "index.html", {"form": form})
+    return render(request, "index.html", {"form": form, "destaques": destaques})
 
 
 def cardapio(request):
