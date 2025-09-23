@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="{% static 'cozinha/css/modal.css' %}">
     <link rel="stylesheet" href="{% static 'cozinha/css/modal-menu-executivo.css' %}">
     <link rel="stylesheet" href="{% static 'cozinha/css/modal-servicos.css' %}">
-    <link rel="stylesheet" href="{% static 'cozinha/css/modal-sobre-nos.css' %}">
+    <link rel="stylesheet" href="{% static 'cozinha/css/sobre-nos.css' %}">
     <link rel="stylesheet" href="{% static 'cozinha/css/carrossel.css' %}">
     <link rel="stylesheet" href="{% static 'cozinha/css/grid.css' %}">
     <link rel="stylesheet" href="{% static 'cozinha/css/section.css' %}">
@@ -41,7 +41,7 @@
             </button>
         </div>
         <div class="dropdown-menu">
-            <a id="menu-executivo-btn">Menu Executivo</a>
+            <a id="menu-executivo-btn" href="{% url 'index' %}">Menu Executivo</a>
             <a id="contratar-btn">Contratar Agora</a>
             <a id="sobre-nos-btn">Sobre Nós</a>
             <a href="{% url 'cardapio' %}'" id="cardapio-btn">Cardápio</a>
@@ -88,15 +88,15 @@
     </div>
 
     <script>
-    function changeWindowHref(template) {
-        if (template == "cardapio") {
-            window.location.href = `{% url 'cardapio' %}`
-        } else if (template == "index") {
-            window.location.href = `{% url 'index' %}`
-        } else if (template == "sobre") {
-            window.location.href = `{% url 'sobre' %}`
+        function changeWindowHref(template) {
+            if (template == "cardapio") {
+                window.location.href = `{% url 'cardapio' %}`
+            } else if (template == "index") {
+                window.location.href = `{% url 'index' %}`
+            } else if (template == "sobre") {
+                window.location.href = `{% url 'sobre' %}`
+            }
         }
-    }
     </script>
     <div id="navbar">
         <div id="navbar-container">
@@ -381,7 +381,6 @@
         </div>
     </footer>
 
-    <script type="module" src="{% static 'cozinha/scripts/main.js' %}"></script>
     <script type="module" src="{% static 'cozinha/scripts/modal.js' %}"></script>
     <script type="module" src="{% static 'cozinha/scripts/dropdown.js' %}"></script>
     <script type="module" src="{% static 'cozinha/scripts/carrossel.js' %}"></script>

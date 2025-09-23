@@ -42,7 +42,7 @@
         <div class="dropdown-menu">
             <a id="menu-executivo-btn">Menu Executivo</a>
             <a id="contratar-btn">Contratar Agora</a>
-            <a id="sobre-nos-btn">Sobre Nós</a>
+            <a id="sobre-nos-btn" href="{% url 'sobre' %}">Sobre Nós</a>
             <a id="cardapio-btn" href="{% url 'cardapio' %}">Cardápio</a>
             <a id="servicos-btn">Serviços</a>
         </div>
@@ -237,6 +237,7 @@
                     <img src="{% static 'cozinha/images/baunilha.jpeg' %}" alt="Baunilha" class="menu-img" />
                     <div class="menu-text">
                         <h3>Carpaccio di Manzo al Tartufo</h3>
+                        <h4 class="price">R$ 65,00</h4>
                         <hr />
                         <p>
                             Finas lâminas de filé-mignon, lascas de parmesão, rúcula fresca,
