@@ -114,6 +114,17 @@
     </div>
   </div>
 
+  <script>
+    function changeWindowHref(template) {
+      if (template == "cardapio") {
+        window.location.href = `{% url 'cardapio' %}`
+      } else if (template == "index") {
+        window.location.href = `{% url 'index' %}`
+      } else if (template == "sobre") {
+        window.location.href = `{% url 'sobre' %}`
+      }
+    }
+  </script>
   <div id="navbar">
     <div id="navbar-container">
       <button id="dropdown-toggle-btn">
@@ -147,7 +158,7 @@
 
       <div class="cards-wrapper">
         <div class="card-container">
-          <img src="../public/benjamin_matos.svg" alt="Chef Executivo" />
+          <img src="{% static 'cozinha/images/benjamin_matos.svg' %}" alt="Chef Executivo" />
           <div class="card-content">
             <h3>Chef Executivo</h3>
             <h4>Benjamin Matos</h4>
@@ -160,7 +171,7 @@
         </div>
 
         <div class="card-container">
-          <img src="../public/isabella_duarte.svg" alt="Chef Pâtissier" />
+          <img src="{% static 'cozinha/images/isabella_duarte.svg' %}" alt="Chef Pâtissier" />
           <div class="card-content">
             <h3>Chef Pâtissier</h3>
             <h4>Isabella Duarte</h4>
@@ -173,7 +184,7 @@
         </div>
 
         <div class="card-container">
-          <img src="../public/rafael_monteiro.svg" alt="Sommelier" />
+          <img src="{% static 'cozinha/images/rafael_monteiro.svg' %}" alt="Sommelier" />
           <div class="card-content">
             <h3>Sommelier</h3>
             <h4>Rafael Monteiro</h4>
@@ -233,9 +244,9 @@
     </div>
   </footer>
 
-  <script type="module" src="script/dropdown.js"></script>
-  <script type="module" src="script/carrossel.js"></script>
-  <script type="module" src="script/cardapio.js"></script>
+  <script type="module" src="{% static 'cozinha/scripts/modal.js' %}"></script>
+  <script type="module" src="{% static 'cozinha/scripts/dropdown.js' %}"></script>
+  <script type="module" src="{% static 'cozinha/scripts/carrossel.js' %}"></script>
 </body>
 
 </html>
