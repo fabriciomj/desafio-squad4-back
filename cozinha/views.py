@@ -3,6 +3,7 @@ from django.shortcuts import render
 from django.urls import reverse
 
 from .forms import ContatoForm
+from .models import Prato
 
 
 def index(request):
@@ -17,7 +18,15 @@ def index(request):
 
 
 def cardapio(request):
-    return render(request, "cardapio.html")
+    entradas = Prato.objects.filter(tipo__exact="E")
+    principais = Prato.objects.filter(tipo__exact="PP")
+    sobremesas = Prato.objects.filter(tipo__exact="S")
+    pratos = {
+        "entradas": entradas,
+        "principais": principais,
+        "sobremesas": sobremesas,
+    }
+    return render(request, "cardapio.html", pratos)
 
 
 def sobre_nos(request):
