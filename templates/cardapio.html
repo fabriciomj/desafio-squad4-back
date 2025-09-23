@@ -226,237 +226,31 @@
     <div class="svg-title-container2">
         <h1 class="svg-title2">Cardápio</h1>
         <div class="svg-title-bar2"></div>
-
+        {% for cat, pratos in cats_pratos %}
         <section>
             <div class="svg-title-container2">
-                <h3>Especialidades</h3>
+                <h3>{{ cat }}</h3>
                 <div class="svg-title-bar2"></div>
             </div>
+            {% if pratos %}
             <div class="menu-container2" id="menu1">
+                {% for prato in pratos %}
                 <div class="menu-card">
-                    <img src="{% static 'cozinha/images/baunilha.jpeg' %}" alt="Baunilha" class="menu-img" />
+                    <img src="{{ prato.foto.url }}" alt="Baunilha" class="menu-img" />
                     <div class="menu-text">
-                        <h3>Carpaccio di Manzo al Tartufo</h3>
-                        <h4 class="price">R$ 65,00</h4>
+                        <h3>{{ prato.nome }}</h3>
+                        <h4 class="price">R$ {{ prato.preco }}</h4>
                         <hr />
                         <p>
-                            Finas lâminas de filé-mignon, lascas de parmesão, rúcula fresca,
-                            azeite trufado e flor de sal.
+                            {{ prato.ingredientes }}
                         </p>
                     </div>
                 </div>
-
-                <div class="menu-card">
-                    <img src="{% static 'cozinha/images/baunilha.jpeg' %}" alt="Baunilha" class="menu-img" />
-                    <div class="menu-text">
-                        <h3>Carpaccio di Manzo al Tartufo</h3>
-                        <hr />
-                        <p>
-                            Finas lâminas de filé-mignon, lascas de parmesão, rúcula fresca,
-                            azeite trufado e flor de sal.
-                        </p>
-                    </div>
-                </div>
-                <div class="menu-card">
-                    <img src="{% static 'cozinha/images/baunilha.jpeg' %}" alt="Baunilha" class="menu-img" />
-                    <div class="menu-text">
-                        <h3>Carpaccio di Manzo al Tartufo</h3>
-                        <hr />
-                        <p>
-                            Finas lâminas de filé-mignon, lascas de parmesão, rúcula fresca,
-                            azeite trufado e flor de sal.
-                        </p>
-                    </div>
-                </div>
-                <div class="menu-card hidden">
-                    <img src="{% static 'cozinha/images/baunilha.jpeg' %}" alt="Baunilha" class="menu-img" />
-                    <div class="menu-text">
-                        <h3>Carpaccio di Manzo al Tartufo</h3>
-                        <hr />
-                        <p>
-                            Finas lâminas de filé-mignon, lascas de parmesão, rúcula fresca,
-                            azeite trufado e flor de sal.
-                        </p>
-                    </div>
-                </div>
-                <div class="menu-card hidden">
-                    <img src="{% static 'cozinha/images/baunilha.jpeg' %}" alt="Baunilha" class="menu-img" />
-                    <div class="menu-text">
-                        <h3>Carpaccio di Manzo al Tartufo</h3>
-                        <hr />
-                        <p>
-                            Finas lâminas de filé-mignon, lascas de parmesão, rúcula fresca,
-                            azeite trufado e flor de sal.
-                        </p>
-                    </div>
-                </div>
-                <div class="menu-card hidden">
-                    <img src="{% static 'cozinha/images/baunilha.jpeg' %}" alt="Baunilha" class="menu-img" />
-                    <div class="menu-text">
-                        <h3>Carpaccio di Manzo al Tartufo</h3>
-                        <hr />
-                        <p>
-                            Finas lâminas de filé-mignon, lascas de parmesão, rúcula fresca,
-                            azeite trufado e flor de sal.
-                        </p>
-                    </div>
-                </div>
+                {% endfor %}
             </div>
-            <button class="verMaisBtn" data-target="menu1">Ver mais</button>
+            {% endif %}
         </section>
-
-        <section>
-            <div class="svg-title-container2">
-                <h3>Prato Principal</h3>
-                <div class="svg-title-bar2"></div>
-            </div>
-            <div class="menu-container2" id="menu2">
-                <div class="menu-card">
-                    <img src="{% static 'cozinha/images/baunilha.jpeg' %}" alt="Baunilha" class="menu-img" />
-                    <div class="menu-text">
-                        <h3>Carpaccio di Manzo al Tartufo</h3>
-                        <hr />
-                        <p>
-                            Finas lâminas de filé-mignon, lascas de parmesão, rúcula fresca,
-                            azeite trufado e flor de sal.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="menu-card">
-                    <img src="{% static 'cozinha/images/baunilha.jpeg' %}" alt="Baunilha" class="menu-img" />
-                    <div class="menu-text">
-                        <h3>Carpaccio di Manzo al Tartufo</h3>
-                        <hr />
-                        <p>
-                            Finas lâminas de filé-mignon, lascas de parmesão, rúcula fresca,
-                            azeite trufado e flor de sal.
-                        </p>
-                    </div>
-                </div>
-                <div class="menu-card">
-                    <img src="{% static 'cozinha/images/baunilha.jpeg' %}" alt="Baunilha" class="menu-img" />
-                    <div class="menu-text">
-                        <h3>Carpaccio di Manzo al Tartufo</h3>
-                        <hr />
-                        <p>
-                            Finas lâminas de filé-mignon, lascas de parmesão, rúcula fresca,
-                            azeite trufado e flor de sal.
-                        </p>
-                    </div>
-                </div>
-                <div class="menu-card hidden">
-                    <img src="{% static 'cozinha/images/baunilha.jpeg' %}" alt="Baunilha" class="menu-img" />
-                    <div class="menu-text">
-                        <h3>Carpaccio di Manzo al Tartufo</h3>
-                        <hr />
-                        <p>
-                            Finas lâminas de filé-mignon, lascas de parmesão, rúcula fresca,
-                            azeite trufado e flor de sal.
-                        </p>
-                    </div>
-                </div>
-                <div class="menu-card hidden">
-                    <img src="{% static 'cozinha/images/baunilha.jpeg' %}" alt="Baunilha" class="menu-img" />
-                    <div class="menu-text">
-                        <h3>Carpaccio di Manzo al Tartufo</h3>
-                        <hr />
-                        <p>
-                            Finas lâminas de filé-mignon, lascas de parmesão, rúcula fresca,
-                            azeite trufado e flor de sal.
-                        </p>
-                    </div>
-                </div>
-                <div class="menu-card hidden">
-                    <img src="{% static 'cozinha/images/baunilha.jpeg' %}" alt="Baunilha" class="menu-img" />
-                    <div class="menu-text">
-                        <h3>Carpaccio di Manzo al Tartufo</h3>
-                        <hr />
-                        <p>
-                            Finas lâminas de filé-mignon, lascas de parmesão, rúcula fresca,
-                            azeite trufado e flor de sal.
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <button class="verMaisBtn" data-target="menu2">Ver mais</button>
-        </section>
-        <section>
-            <div class="svg-title-container2">
-                <h3>Sobremesas</h3>
-                <div class="svg-title-bar2"></div>
-            </div>
-            <div class="menu-container2" id="menu3">
-                <div class="menu-card">
-                    <img src="{% static 'cozinha/images/baunilha.jpeg' %}" alt="Baunilha" class="menu-img" />
-                    <div class="menu-text">
-                        <h3>Carpaccio di Manzo al Tartufo</h3>
-                        <hr />
-                        <p>
-                            Finas lâminas de filé-mignon, lascas de parmesão, rúcula fresca,
-                            azeite trufado e flor de sal.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="menu-card">
-                    <img src="{% static 'cozinha/images/baunilha.jpeg' %}" alt="Baunilha" class="menu-img" />
-                    <div class="menu-text">
-                        <h3>Carpaccio di Manzo al Tartufo</h3>
-                        <hr />
-                        <p>
-                            Finas lâminas de filé-mignon, lascas de parmesão, rúcula fresca,
-                            azeite trufado e flor de sal.
-                        </p>
-                    </div>
-                </div>
-                <div class="menu-card">
-                    <img src="{% static 'cozinha/images/baunilha.jpeg' %}" alt="Baunilha" class="menu-img" />
-                    <div class="menu-text">
-                        <h3>Carpaccio di Manzo al Tartufo</h3>
-                        <hr />
-                        <p>
-                            Finas lâminas de filé-mignon, lascas de parmesão, rúcula fresca,
-                            azeite trufado e flor de sal.
-                        </p>
-                    </div>
-                </div>
-                <div class="menu-card hidden">
-                    <img src="{% static 'cozinha/images/baunilha.jpeg' %}" alt="Baunilha" class="menu-img" />
-                    <div class="menu-text">
-                        <h3>Carpaccio di Manzo al Tartufo</h3>
-                        <hr />
-                        <p>
-                            Finas lâminas de filé-mignon, lascas de parmesão, rúcula fresca,
-                            azeite trufado e flor de sal.
-                        </p>
-                    </div>
-                </div>
-                <div class="menu-card hidden">
-                    <img src="{% static 'cozinha/images/baunilha.jpeg' %}" alt="Baunilha" class="menu-img" />
-                    <div class="menu-text">
-                        <h3>Carpaccio di Manzo al Tartufo</h3>
-                        <hr />
-                        <p>
-                            Finas lâminas de filé-mignon, lascas de parmesão, rúcula fresca,
-                            azeite trufado e flor de sal.
-                        </p>
-                    </div>
-                </div>
-                <div class="menu-card hidden">
-                    <img src="{% static 'cozinha/images/baunilha.jpeg' %}" alt="Baunilha" class="menu-img" />
-                    <div class="menu-text">
-                        <h3>Carpaccio di Manzo al Tartufo</h3>
-                        <hr />
-                        <p>
-                            Finas lâminas de filé-mignon, lascas de parmesão, rúcula fresca,
-                            azeite trufado e flor de sal.
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <button class="verMaisBtn" data-target="menu3">Ver mais</button>
-        </section>
+        {% endfor %}
     </div>
 
     <footer>
