@@ -50,9 +50,6 @@ class Prato(models.Model):
         validators=[MinValueValidator(0)],
         verbose_name="Preço",
     )
-    adicionar_carrossel = models.BooleanField(
-        verbose_name="Destacar Prato", default=False
-    )
 
     def save(self, **kwargs):
         super().save(**kwargs)
