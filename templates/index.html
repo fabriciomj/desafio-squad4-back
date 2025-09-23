@@ -126,38 +126,22 @@
             <img src="{% static 'cozinha/images/Vector.svg' %}" class="bg-svg" width="200" style="display: block;">
 
             <div class="carousel-container">
+                {% if destaques %}
                 <div class="carousel">
                     <div class="carousel-track">
+
+                        {% for destaque in destaques %}
                         <div class="item">
-                            <img src="{% static 'cozinha/images/baunilha.jpeg' %}" alt="Sobert de Baunilha">
-                            <span class="caption">Sorbet de Baunilha</span>
+                            <img src="{{ destaque.foto.url }}" alt="Sobert de Baunilha">
+                            <span class="caption">{{ destaque.nome }}</span>
                             <a href="" class="card-link">Ver mais</a>
                         </div>
-                        <div class="item">
-                            <img src="{% static 'cozinha/images/baunilha.jpeg' %}" alt="Tempurá de Pimenta">
-                            <span class="caption">Tempurá de Pimenta</span>
-                            <a href="" class="card-link">Ver mais</a>
-                        </div>
-                        <div class="item">
-                            <img src="{% static 'cozinha/images/baunilha.jpeg' %}" alt="alada Mata Atlântica">
-                            <span class="caption">Salada Mata Atlântica</span>
-                            <a href="" class="card-link">Ver mais</a>
-                        </div>
-                        <div class="item">
-                            <img src="{% static 'cozinha/images/baunilha.jpeg' %}" alt="Penne à lá Kombutcha">
-                            <span class="caption">Penne à lá Kombutcha</span>
-                            <a href="" class="card-link">Ver mais</a>
-                        </div>
-                        <div class="item">
-                            <img src="{% static 'cozinha/images/baunilha.jpeg' %}" alt="Sorbet de Manga">
-                            <span class="caption">Sorbet de Manga</span>
-                            <a href="" class="card-link">Ver mais</a>
-                        </div>
+                        {% endfor %}
                     </div>
                     <button class="nav prev">&lt;</button>
                     <button class="nav next">&gt;</button>
                 </div>
-
+                {% endif %}
                 <div class="svg-section">
 
                 </div>
