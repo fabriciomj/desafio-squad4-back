@@ -34,7 +34,15 @@ def renomear_imagem(path: str, novo_nome: str):
 
 
 class Prato(models.Model):
+    TIPOS_PRATOS = {
+        "E": "Entrada",
+        "PP": "Prato Principal",
+        "S": "Sobremesa",
+    }
     nome = models.CharField(max_length=30)
+    tipo = models.CharField(
+        max_length=2, choices=TIPOS_PRATOS, verbose_name="Tipo de Prato"
+    )
     ingredientes = models.CharField(max_length=250)
     foto_cardapio = models.ImageField(upload_to="pratos")
     foto_carrossel = models.ImageField(blank=True, upload_to="pratos/destaque")
