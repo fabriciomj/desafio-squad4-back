@@ -41,8 +41,7 @@ class Prato(models.Model):
         max_length=2, choices=TIPOS_PRATOS, verbose_name="Tipo de Prato"
     )
     ingredientes = models.CharField(max_length=250)
-    foto_cardapio = models.ImageField(upload_to=upload_pratos)
-    foto_carrossel = models.ImageField(blank=True, upload_to=upload_destaques)
+    foto = models.ImageField(upload_to=upload_pratos)
     preco = models.DecimalField(
         max_digits=7,
         decimal_places=2,
