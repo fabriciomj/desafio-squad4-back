@@ -19,5 +19,6 @@ def index(request):
 def cardapio(request):
     return render(request, "cardapio.html")
 
+
 def sobre_nos(request):
     return render(request, "sobre-nos.html")
