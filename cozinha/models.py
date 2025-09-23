@@ -32,9 +32,11 @@ def upload_funcionarios(_, filename):
 
 class Prato(models.Model):
     TIPOS_PRATOS = {
-        "E": "Entrada",
-        "PP": "Prato Principal",
+        "E": "Especialidades",
+        "M": "Massa",
+        "V": "Vegetariano",
         "S": "Sobremesa",
+        "B": "Bebidas",
     }
     nome = models.CharField(max_length=30)
     tipo = models.CharField(
