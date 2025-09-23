@@ -5,26 +5,23 @@
 
 <head>
   <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="/logo.svg" />
+  <link rel="icon" type="image/svg+xml" href="{% static 'cozinha/images/logo.svg' %}" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Lobo Cozinha</title>
-
-  <link rel="stylesheet" href="style/style.css" />
-  <link rel="stylesheet" href="style/cardapio.css" />
-  <link rel="stylesheet" href="style/navbar.css" />
-  <link rel="stylesheet" href="style/dropdown.css" />
-  <link rel="stylesheet" href="style/modal.css" />
-  <link rel="stylesheet" href="style/modal-menu-executivo.css" />
-  <link rel="stylesheet" href="style/modal-servicos.css" />
-  <link rel="stylesheet" href="style/modal-sobre-nos.css" />
-  <link rel="stylesheet" href="style/carrossel.css" />
-  <link rel="stylesheet" href="style/grid.css" />
-  <link rel="stylesheet" href="style/section.css" />
-  <link rel="stylesheet" href="style/menu.css" />
-  <link rel="stylesheet" href="style/display.css" />
-  <link rel="stylesheet" href="style/servicos.css" />
-  <link rel="stylesheet" href="style/footer.css" />
-  <link rel="stylesheet" href="style/sobre-nos.css" />
+  <link rel="stylesheet" href="{% static 'cozinha/css/style.css' %}">
+  <link rel="stylesheet" href="{% static 'cozinha/css/navbar.css' %}">
+  <link rel="stylesheet" href="{% static 'cozinha/css/dropdown.css' %}">
+  <link rel="stylesheet" href="{% static 'cozinha/css/modal.css' %}">
+  <link rel="stylesheet" href="{% static 'cozinha/css/modal-menu-executivo.css' %}">
+  <link rel="stylesheet" href="{% static 'cozinha/css/modal-servicos.css' %}">
+  <link rel="stylesheet" href="{% static 'cozinha/css/modal-sobre-nos.css' %}">
+  <link rel="stylesheet" href="{% static 'cozinha/css/carrossel.css' %}">
+  <link rel="stylesheet" href="{% static 'cozinha/css/grid.css' %}">
+  <link rel="stylesheet" href="{% static 'cozinha/css/section.css' %}">
+  <link rel="stylesheet" href="{% static 'cozinha/css/menu.css' %}">
+  <link rel="stylesheet" href="{% static 'cozinha/css/display.css' %}">
+  <link rel="stylesheet" href="{% static 'cozinha/css/servicos.css' %}">
+  <link rel="stylesheet" href="{% static 'cozinha/css/footer.css' %}">
 </head>
 
 <body>
@@ -34,19 +31,19 @@
     <div class="dropdown-content">
       <div class="dropdown-inner">
         <div>
-          <img class="dropdown-logo" src="../public/logo_dropdown.svg" />
-          <div class="menu-bar" style="margin: 0"></div>
+          <img class="dropdown-logo" src="{% static 'cozinha/images/logo_dropdown.svg' %}">
+          <div class="menu-bar" style="margin: 0;"></div>
         </div>
       </div>
       <button id="dropdown-close-btn">
-        <img src="../public/x.svg" />
+        <img src="{% static 'cozinha/images/x.svg' %}">
       </button>
     </div>
     <div class="dropdown-menu">
-      <a id="menu-executivo-btn" href="../index.html">Menu Executivo</a>
+      <a id="menu-executivo-btn">Menu Executivo</a>
       <a id="contratar-btn">Contratar Agora</a>
-      <a id="sobre-nos-btn" href="sobre-nos.html">Sobre Nós</a>
-      <a id="cardapio-btn" href="cardapio.html">Cardápio</a>
+      <a id="sobre-nos-btn" href="{% url 'sobre' %}">Sobre Nós</a>
+      <a id="cardapio-btn" href="{% url 'cardapio' %}">Cardápio</a>
       <a id="servicos-btn">Serviços</a>
     </div>
   </div>
@@ -54,16 +51,16 @@
   <div class="modal" id="sobre-nos">
     <div class="modal-container">
       <button class="modal-close-btn" id="sobre-nos-close-btn">
-        <img src="../public/voltar.svg" />
+        <img src="{% static 'cozinha/images/voltar.svg' %}">
       </button>
       <div class="header-container">
-        <img id="logo" src="../public/logo_dropdown.svg" onclick="window.location.href='../index.html'" />
+        <img id="logo" src="{% static 'cozinha/images/logo_dropdown.svg' %}" onclick="changeWindowHref('index')">
       </div>
     </div>
     <div class="content-container">
       <div class="menu-bar modal-bar-inline"></div>
       <h2>QUEM SOMOS NÓS?</h2>
-      <img src="../public/restaurante.svg" />
+      <img src="{% static 'cozinha/images/restaurante.svg' %}" />
       <p>
         Nosso restaurante une sofisticação e sabor em cada detalhe. Inspirados
         pela alta gastronomia, criamos pratos que combinam ingredientes
@@ -75,7 +72,7 @@
       <h2>NOSSA EQUIPE</h2>
 
       <div class="card-container">
-        <img src="../public/benjamin_matos.svg" />
+        <img src="{% static 'cozinha/images/benjamin_matos.svg' %}" />
         <div class="card-content">
           <h4>CHEF EXECUTIVO</h4>
           <div class="menu-bar card-bar"></div>
@@ -89,7 +86,7 @@
       </div>
 
       <div class="card-container">
-        <img src="../public/isabella_duarte.svg" />
+        <img src="{% static 'cozinha/images/isabella_duarte.svg' %}" />
         <div class="card-content">
           <h4>Chef Pâtissier</h4>
           <div class="menu-bar card-bar"></div>
@@ -103,7 +100,7 @@
       </div>
 
       <div class="card-container">
-        <img src="../public/rafael_monteiro.svg" />
+        <img src="{% static 'cozinha/images/rafael_monteiro.svg' %}" />
         <div class="card-content">
           <h4>Sommelier</h4>
           <div class="menu-bar card-bar"></div>
@@ -120,19 +117,13 @@
   <div id="navbar">
     <div id="navbar-container">
       <button id="dropdown-toggle-btn">
-        <img src="../public/navbar_toggle.svg" />
+        <img src="{% static 'cozinha/images/navbar_toggle.svg' %}">
       </button>
-      <img id="logo" src="../public/logo.svg" onclick="window.location.href='../index.html'" />
+      <img id="logo" src="{% static 'cozinha/images/navbar_toggle.svg' %}" onclick="changeWindowHref('index')">
       <div id="navbar-btn-container">
-        <button class="navbar-btn" onclick="window.location.href='../index.html'">
-          Home
-        </button>
-        <button class="navbar-btn" onclick="window.location.href='cardapio.html'">
-          Cardápio
-        </button>
-        <button class="navbar-btn" onclick="window.location.href='sobre-nos.html'">
-          Sobre Nós
-        </button>
+        <button class="navbar-btn" onclick="changeWindowHref('index')">Home</button>
+        <button class="navbar-btn" onclick="changeWindowHref('cardapio')">Cardápio</button>
+        <button class="navbar-btn" onclick="changeWindowHref('sobre')">Sobre nós</button>
       </div>
       <button id="reserva-btn">RESERVAR AGORA</button>
     </div>
@@ -141,7 +132,7 @@
   <main id="sobre-nos">
     <section class="quem-somos">
       <h2>Quem Somos Nós?</h2>
-      <img src="../public/logo.svg" alt="Nosso Restaurante" />
+      <img src="{% static 'cozinha/images/logo.svg' %}" alt="Nosso Restaurante" />
       <p>
         Nosso restaurante une sofisticação e sabor em cada detalhe. Inspirados
         pela alta gastronomia, criamos pratos que combinam ingredientes
@@ -198,45 +189,40 @@
   </main>
 
   <footer>
-    <div style="
-          display: flex;
-          justify-content: center;
-          align-items: stretch;
-          width: 100%;
-        ">
+    <div style="display: flex; justify-content: center; align-items: stretch; width: 100%;">
       <div class="info-container">
-        <img id="footer-logo" src="../public/footer_logo.svg" />
+        <img id="footer-logo" src="{% static 'cozinha/images/footer_logo.svg' %}">
       </div>
 
       <div class="info-container">
         <h3>Contato</h3>
 
-        <div style="display: flex; flex-direction: column">
+        <div style="display: flex; flex-direction: column;">
           <a href="">+55 21 99999-9999</a>
           <a href="">contato@lobocozinha.com</a>
         </div>
 
-        <div style="display: flex; flex-direction: column">
+        <div style="display: flex; flex-direction: column;">
           <span>Rua ali perto, 89 - Barra da Tijuca</span>
           <span>Rio de Janeiro - RJ</span>
         </div>
 
         <div>
           <button class="social-media-btn">
-            <img src="../public/logo_instagram.svg" />
+            <img src="{% static 'cozinha/images/logo_instagram.svg' %}">
           </button>
           <button class="social-media-btn">
-            <img src="../public/logo_facebook.svg" />
+            <img src="{% static 'cozinha/images/logo_facebook.svg' %}">
           </button>
           <button class="social-media-btn">
-            <img src="../public/logo_youtube.svg" />
+            <img src="{% static 'cozinha/images/logo_youtube.svg' %}">
           </button>
         </div>
       </div>
 
       <div class="info-container">
         <h3>Informações</h3>
-        <div style="display: flex; flex-direction: column">
+        <div style="display: flex; flex-direction: column;">
           <a href="">Reservas</a>
           <a href="">Personal Chef</a>
           <a href="">Buffet Personalizado</a>
@@ -247,9 +233,9 @@
     </div>
   </footer>
 
-  <script type="module" src="src/script/modal.js"></script>
-  <script type="module" src="src/script/dropdown.js"></script>
-  <script type="module" src="src/script/carrossel.js"></script>
+  <script type="module" src="script/dropdown.js"></script>
+  <script type="module" src="script/carrossel.js"></script>
+  <script type="module" src="script/cardapio.js"></script>
 </body>
 
 </html>
