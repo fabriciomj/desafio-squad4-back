@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/logo.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lobo Cozinha</title>
+
+    <link rel="stylesheet" href="style/style.css" />
+    <link rel="stylesheet" href="style/cardapio.css" />
+    <link rel="stylesheet" href="style/navbar.css" />
+    <link rel="stylesheet" href="style/dropdown.css" />
+    <link rel="stylesheet" href="style/modal.css" />
+    <link rel="stylesheet" href="style/modal-menu-executivo.css" />
+    <link rel="stylesheet" href="style/modal-servicos.css" />
+    <link rel="stylesheet" href="style/modal-sobre-nos.css" />
+    <link rel="stylesheet" href="style/carrossel.css" />
+    <link rel="stylesheet" href="style/grid.css" />
+    <link rel="stylesheet" href="style/section.css" />
+    <link rel="stylesheet" href="style/menu.css" />
+    <link rel="stylesheet" href="style/display.css" />
+    <link rel="stylesheet" href="style/servicos.css" />
+    <link rel="stylesheet" href="style/footer.css" />
+    <link rel="stylesheet" href="style/sobre-nos.css" />
+  </head>
+
+  <body>
+    <div class="modal-backdrop" id="modal-backdrop"></div>
+
+    <div id="dropdown-container">
+      <div class="dropdown-content">
+        <div class="dropdown-inner">
+          <div>
+            <img class="dropdown-logo" src="../public/logo_dropdown.svg" />
+            <div class="menu-bar" style="margin: 0"></div>
+          </div>
+        </div>
+        <button id="dropdown-close-btn">
+          <img src="../public/x.svg" />
+        </button>
+      </div>
+      <div class="dropdown-menu">
+        <a id="menu-executivo-btn" href="../index.html">Menu Executivo</a>
+        <a id="contratar-btn">Contratar Agora</a>
+        <a id="sobre-nos-btn" href="sobre-nos.html">Sobre Nós</a>
+        <a id="cardapio-btn" href="cardapio.html">Cardápio</a>
+        <a id="servicos-btn">Serviços</a>
+      </div>
+    </div>
+
+    <div class="modal" id="sobre-nos">
+      <div class="modal-container">
+        <button class="modal-close-btn" id="sobre-nos-close-btn">
+          <img src="../public/voltar.svg" />
+        </button>
+        <div class="header-container">
+          <img
+            id="logo"
+            src="../public/logo_dropdown.svg"
+            onclick="window.location.href='../index.html'"
+          />
+        </div>
+      </div>
+      <div class="content-container">
+        <div class="menu-bar modal-bar-inline"></div>
+        <h2>QUEM SOMOS NÓS?</h2>
+        <img src="../public/restaurante.svg" />
+        <p>
+          Nosso restaurante une sofisticação e sabor em cada detalhe. Inspirados
+          pela alta gastronomia, criamos pratos que combinam ingredientes
+          frescos, técnicas refinadas e apresentação impecável. Mais do que uma
+          refeição, oferecemos uma experiência única, onde tradição e inovação
+          se encontram para encantar cada momento à mesa.
+        </p>
+        <div class="menu-bar modal-bar-inline"></div>
+        <h2>NOSSA EQUIPE</h2>
+
+        <div class="card-container">
+          <img src="../public/benjamin_matos.svg" />
+          <div class="card-content">
+            <h4>CHEF EXECUTIVO</h4>
+            <div class="menu-bar card-bar"></div>
+            <h5>BENJAMIN MATOS</h5>
+            <span>
+              Italiano de nascimento, Lorenzo traz em sua bagagem mais de 20
+              anos de experiência em restaurantes estrelados Michelin. Sua
+              cozinha combina tradição mediterrânea com inovação contemporânea.
+            </span>
+          </div>
+        </div>
+
+        <div class="card-container">
+          <img src="../public/isabella_duarte.svg" />
+          <div class="card-content">
+            <h4>Chef Pâtissier</h4>
+            <div class="menu-bar card-bar"></div>
+            <h5>Isabella Duarte</h5>
+            <span>
+              Especialista em confeitaria francesa, Isabella é responsável por
+              nossas sobremesas autorais, unindo técnica refinada e um toque
+              criativo que transforma cada final de refeição em poesia.
+            </span>
+          </div>
+        </div>
+
+        <div class="card-container">
+          <img src="../public/rafael_monteiro.svg" />
+          <div class="card-content">
+            <h4>Sommelier</h4>
+            <div class="menu-bar card-bar"></div>
+            <h5>Rafael Monteiro</h5>
+            <span>
+              Apaixonado por vinhos, Rafael seleciona rótulos exclusivos e
+              harmonizações perfeitas para realçar cada prato do nosso cardápio.
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="navbar">
+      <div id="navbar-container">
+        <button id="dropdown-toggle-btn">
+          <img src="../public/navbar_toggle.svg" />
+        </button>
+        <img
+          id="logo"
+          src="../public/logo.svg"
+          onclick="window.location.href='../index.html'"
+        />
+        <div id="navbar-btn-container">
+          <button
+            class="navbar-btn"
+            onclick="window.location.href='../index.html'"
+          >
+            Home
+          </button>
+          <button
+            class="navbar-btn"
+            onclick="window.location.href='cardapio.html'"
+          >
+            Cardápio
+          </button>
+          <button
+            class="navbar-btn"
+            onclick="window.location.href='sobre-nos.html'"
+          >
+            Sobre Nós
+          </button>
+        </div>
+        <button id="reserva-btn">RESERVAR AGORA</button>
+      </div>
+    </div>
+
+    <main id="sobre-nos">
+      <section class="quem-somos">
+        <h2>Quem Somos Nós?</h2>
+        <img src="../public/logo.svg" alt="Nosso Restaurante" />
+        <p>
+          Nosso restaurante une sofisticação e sabor em cada detalhe. Inspirados
+          pela alta gastronomia, criamos pratos que combinam ingredientes
+          frescos, técnicas refinadas e apresentação impecável. Mais do que uma
+          refeição, oferecemos uma experiência única, onde tradição e inovação
+          se encontram para encantar cada momento à mesa.
+        </p>
+      </section>
+
+      <section class="nossa-equipe">
+        <h2>Nossa Equipe</h2>
+
+        <div class="cards-wrapper">
+          <div class="card-container">
+            <img src="../public/benjamin_matos.svg" alt="Chef Executivo" />
+            <div class="card-content">
+              <h3>Chef Executivo</h3>
+              <h4>Benjamin Matos</h4>
+              <p>
+                Italiano de nascimento, Lorenzo traz mais de 20 anos de
+                experiência em restaurantes estrelados Michelin. Sua cozinha
+                combina tradição mediterrânea com inovação contemporânea.
+              </p>
+            </div>
+          </div>
+
+          <div class="card-container">
+            <img src="../public/isabella_duarte.svg" alt="Chef Pâtissier" />
+            <div class="card-content">
+              <h3>Chef Pâtissier</h3>
+              <h4>Isabella Duarte</h4>
+              <p>
+                Especialista em confeitaria francesa, Isabella é responsável por
+                nossos sobremesas autorais, que encantam clientes com sua
+                delicadeza e inovação.
+              </p>
+            </div>
+          </div>
+
+          <div class="card-container">
+            <img src="../public/rafael_monteiro.svg" alt="Sommelier" />
+            <div class="card-content">
+              <h3>Sommelier</h3>
+              <h4>Rafael Monteiro</h4>
+              <p>
+                Apaixonado por vinhos, Rafael seleciona rótulos exclusivos e
+                harmonizações perfeitas para realçar cada prato do nosso
+                cardápio.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div
+        style="
+          display: flex;
+          justify-content: center;
+          align-items: stretch;
+          width: 100%;
+        "
+      >
+        <div class="info-container">
+          <img id="footer-logo" src="../public/footer_logo.svg" />
+        </div>
+
+        <div class="info-container">
+          <h3>Contato</h3>
+
+          <div style="display: flex; flex-direction: column">
+            <a href="">+55 21 99999-9999</a>
+            <a href="">contato@lobocozinha.com</a>
+          </div>
+
+          <div style="display: flex; flex-direction: column">
+            <span>Rua ali perto, 89 - Barra da Tijuca</span>
+            <span>Rio de Janeiro - RJ</span>
+          </div>
+
+          <div>
+            <button class="social-media-btn">
+              <img src="../public/logo_instagram.svg" />
+            </button>
+            <button class="social-media-btn">
+              <img src="../public/logo_facebook.svg" />
+            </button>
+            <button class="social-media-btn">
+              <img src="../public/logo_youtube.svg" />
+            </button>
+          </div>
+        </div>
+
+        <div class="info-container">
+          <h3>Informações</h3>
+          <div style="display: flex; flex-direction: column">
+            <a href="">Reservas</a>
+            <a href="">Personal Chef</a>
+            <a href="">Buffet Personalizado</a>
+            <a href="">Jantar temático</a>
+          </div>
+          <span>EJECT © Alguns Direitos Reservados</span>
+        </div>
+      </div>
+    </footer>
+
+    <script type="module" src="src/script/modal.js"></script>
+    <script type="module" src="src/script/dropdown.js"></script>
+    <script type="module" src="src/script/carrossel.js"></script>
+  </body>
+</html>
