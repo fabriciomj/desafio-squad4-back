@@ -26,7 +26,7 @@ body {
 }
 
 .section {
-    background-image: url('../images/fundo.png');
+    background-image: url('../../public/fundo.png');
     background-size: 100%;
     background-attachment: fixed;
 }

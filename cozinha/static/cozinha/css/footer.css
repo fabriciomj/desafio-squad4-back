@@ -82,3 +82,37 @@ form textarea {
 #submit:hover {
     background-color: #8f5517;
 }
+
+@media (max-width: 1024px) {
+  footer .footer-container {
+    gap: 30px;
+    padding: 30px 15px;
+  }
+
+  .info-container {
+    padding: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  footer .footer-container {
+    flex-direction: column; /* empilha os blocos */
+    align-items: center;
+    text-align: center;
+  }
+
+  .info-container {
+    flex: none;
+    width: 100%;
+    max-width: 500px;
+    padding: 10px 0;
+  }
+
+  #footer-logo {
+    margin: 0 auto;
+  }
+
+  #submit {
+    align-self: center;
+  }
+}

@@ -15,8 +15,6 @@ const sobreNosModal = document.getElementById('sobre-nos');
 const sobreNosBtn = document.getElementById('sobre-nos-btn');
 const sobreNosCloseBtn = document.getElementById('sobre-nos-close-btn');
 
-const cardapioBtn = document.getElementById('cardapio-btn');
-
 const servicosModal = document.getElementById('servicos');
 const servicosBtn = document.getElementById('servicos-btn');
 const servicosCloseBtn = document.getElementById('servicos-close-btn');
