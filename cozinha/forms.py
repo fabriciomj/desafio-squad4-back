@@ -24,7 +24,8 @@ class ContatoForm(ModelForm):
 
 
 class MyDateTime(DateTimeInput):
-    input_type = 'datetime-local'
+    input_type = "datetime-local"
+
 
 class ReservaForm(ModelForm):
     class Meta:
