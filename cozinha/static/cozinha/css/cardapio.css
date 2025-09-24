@@ -1,0 +1,152 @@
+html,
+body {
+    background-color: #AA9F7E;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.svg-title-container2>* {
+    color: #643705;
+    margin-left: 5%;
+}
+
+.svg-title2 {
+    display: block;
+    text-align: left;
+    font-size: 38px;
+}
+
+.svg-title-bar2 {
+    width: 72px;
+    height: 6px;
+    margin-bottom: 3%;
+}
+
+.menu-container2 {
+    display: flex;
+    flex-wrap: wrap;
+    /* permite quebrar linha */
+    gap: 50px;
+    /* espaço entre os cards */
+    justify-content: center;
+    /* centraliza na horizontal */
+    margin-top: 3%;
+}
+
+
+.menu-card {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    border-radius: 12px;
+    border: 1px solid #643705;
+    overflow: hidden;
+    width: 350px;
+    /* largura fixa, melhor controle */
+    flex-shrink: 0;
+    /* evita encolher demais */
+}
+
+
+.menu-img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+}
+
+.menu-text {
+    padding: 7px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.menu-text h3 {
+    margin: 0 0 4px;
+    font-size: .9rem;
+    font-weight: bold;
+    color: #643705;
+}
+
+.menu-text hr {
+    border: none;
+    border-top: 1px solid #643705;
+    margin: 3px 0;
+}
+
+.menu-text p {
+    margin: 0;
+    font-size: 0.85rem;
+    line-height: 1.4;
+    color: #643705;
+}
+
+section {
+    margin-top: 3%;
+    margin-bottom: 5%;
+}
+
+
+@media (max-width: 768px) {
+    .menu-container2 {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .menu-card {
+        width: 300px;
+        max-width: 500px;
+        height: 100px;
+        max-height: 110px;
+    }
+
+    .menu-text {
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .menu-text h3 {
+        margin: 0 0 4px;
+        font-size: .7rem;
+        font-weight: bold;
+        color: #643705;
+    }
+
+    .menu-text hr {
+        border: none;
+        border-top: 1px solid #643705;
+        margin: 1px 0;
+    }
+
+    .menu-text p {
+        margin: 0;
+        font-size: 0.7rem;
+        line-height: 1.4;
+        color: #643705;
+    }
+}
+
+
+.hidden {
+    display: none;
+}
+
+.verMaisBtn {
+    margin: 20px auto;
+    display: block;
+    padding: 10px 20px;
+    border: none;
+    background: #AA9F7E;
+    color: #643705;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.verMaisBtn:hover {
+    text-decoration: underline;
+}

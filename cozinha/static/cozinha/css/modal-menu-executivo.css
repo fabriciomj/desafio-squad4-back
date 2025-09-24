@@ -1,0 +1,47 @@
+#menu-executivo {
+    padding: 10vw;
+    overflow-y: auto;
+}
+
+#menu-executivo h1 {
+    color: #3F2305;
+    font-size: 1.75rem;
+    line-height: 2.25rem;
+    margin-bottom: 6px;
+}
+
+#menu-executivo h4 {
+    margin-top: 10px;
+    margin-bottom: 2.5rem;
+    color: #3F2305;
+    font-size: 0.8rem;
+    line-height: normal;
+    font-weight: 500;
+}
+
+#menu-executivo h3 {
+    font-weight: 500;
+    font-size: 1.1rem;
+    line-height: 24px;
+    color: #A39671;
+}
+
+#menu-executivo span {
+    font-weight: normal;
+    color: #3F2305;
+    font-size: 1rem;
+    line-height: 24px;
+}
+
+#menu-executivo div:has(span) {
+    display: flex;
+    flex-direction: column;
+    font-weight: 500;
+}
+
+#menu-executivo .items-container {
+    display: flex;
+    flex-direction: column;
+    margin: 1rem 0;
+    gap: 0.75rem;
+}

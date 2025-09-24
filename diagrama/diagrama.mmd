@@ -1,11 +1,10 @@
 classDiagram
     class Prato{
       CharField nome
+      CharField tipo
       CharField ingredientes
-      ImageField foto_cardapio
-      ImageField foto_carrossel
+      ImageField foto
       DecimalField preco
-      BooleanField adicionar_carrossel
     }
     class Avaliacao{
       IntegerField nota
@@ -28,8 +27,7 @@ classDiagram
     class Reserva {
       CharField nome_cliente
       CharField telefone
-      DateField data
-      DateTimeField horario
+      DateTimeField data_hora
       IntegerField qtd_pessoas
       TextField observacao
     }

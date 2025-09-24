@@ -1,0 +1,186 @@
+.carousel-container {
+    position: absolute;
+    /* tira do fluxo e coloca sobre a imagem */
+    bottom: 6%;
+    /* controla a altura do carrossel sobre a imagem */
+    left: 50%;
+    transform: translateX(-50%);
+    /* centraliza horizontalmente */
+    display: block;
+    align-items: center;
+    z-index: 5;
+    /* garante que fica por cima */
+    margin-bottom: 30px;
+    /* largura igual a pagina */
+    width: 80vw;
+}
+
+.carousel-track {
+    margin-bottom: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    /* mantém imagem + texto alinhados em cima */
+    overflow-x: hidden;
+}
+
+.item {
+    display: flex;
+    flex-direction: column;
+    /* imagem em cima, texto embaixo */
+    align-items: center;
+    margin: 0 50px;
+    width: 120px;
+    /* tamanho fixo da “caixinha” */
+    transition: transform 0.3s;
+    z-index: 20;
+}
+
+.item img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.caption {
+    margin-top: 10px;
+    font-size: 1.15rem;
+    text-align: center;
+    color: white;
+    /* ou outra cor conforme seu layout */
+}
+
+.caption.center {
+    font-weight: bold;
+    color: #FFFFFF;
+    /* opcional: cor diferente para destacar */
+}
+
+
+.carousel {
+    position: relative;
+    /* referência para os botões */
+    display: flex;
+}
+
+
+.nav {
+    position: absolute;
+    top: 115px;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: white;
+}
+
+.nav.prev {
+    left: -60px;
+}
+
+.nav.next {
+    right: -60px;
+}
+
+
+.card-link {
+    margin-top: 8px;
+    /* espaço em relação ao texto */
+    font-size: 0.9rem;
+    color: #FFFFFF;
+    /* cor do link (ex: dourado) */
+    text-decoration: none;
+    /* remove sublinhado padrão */
+    transition: color 0.3s;
+}
+
+@media (max-width: 768px) {
+    .carousel {
+        width: 100%;
+    }
+
+    .carousel-container {
+        width: 95vw;
+        /* ajusta largura para mobile */
+        bottom: -20%;
+        /* reduz a distância do bottom */
+        transform: translateX(-50%) scale(0.7);
+        /* centraliza e reduz o tamanho */
+
+    }
+
+    .carousel-track {
+        margin-bottom: 20px;
+        /* reduz margem */
+    }
+
+    .item {
+        margin: 0 20px;
+        /* reduz espaçamento entre itens */
+        width: 80px;
+        /* reduz largura dos itens */
+    }
+
+    .item img {
+        width: 120px;
+        /* reduz tamanho das imagens */
+        height: 120px;
+    }
+
+    .caption {
+        font-size: 0.9rem;
+        /* reduz tamanho da fonte */
+    }
+
+    .card-link {
+        font-size: 0.8rem;
+        /* reduz tamanho do link */
+    }
+
+    .nav {
+        top: 80px;
+        /* ajusta posição dos botões */
+        font-size: 1.5rem;
+        /* reduz tamanho dos botões */
+    }
+
+    .nav.prev {
+        left: -30px;
+        /* ajusta posição do botão anterior */
+    }
+
+    .nav.next {
+        right: -30px;
+        /* ajusta posição do botão próximo */
+    }
+}
+
+@media (max-width: 320px) {
+    .carousel-container {
+        bottom: -25%;
+        /* reduz a distância do bottom */
+        transform: translateX(-50%) scale(0.6);
+        /* centraliza e reduz o tamanho */
+
+    }
+}
+
+@media (min-width: 425px) {
+    .carousel-container {
+        bottom: -10%;
+        /* reduz a distância do bottom */
+        transform: translateX(-50%) scale(0.8);
+        /* centraliza e reduz o tamanho */
+    }
+}
+
+@media (min-width: 768px) {
+    .carousel-container {
+        bottom: -5%;
+        /* reduz a distância do bottom */
+        transform: translateX(-50%) scale(0.8);
+        /* centraliza e reduz o tamanho */
+    }
+}
