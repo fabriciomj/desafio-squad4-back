@@ -29,3 +29,22 @@
     line-height: normal;
     font-weight: 500;
 }
+
+@media (max-width: 768px) {
+    #section2 {
+        padding: clamp(24px, 6vw, 60px) clamp(10px, 5vw, 60px) clamp(10px, 2vw, 20px);
+    }
+
+    .section-title {
+        font-size: 1.55rem;
+    }
+
+    .section-title-bar {
+        width: 40px;
+        height: 4px;
+    }
+
+    .section-subtitle {
+        font-size: 10px;
+    }
+}
