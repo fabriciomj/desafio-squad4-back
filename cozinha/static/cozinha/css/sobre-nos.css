@@ -23,7 +23,7 @@ body {
   text-align: justify;
   line-height: 1.6;
   margin: 1rem 0;
-  color: #DED7C2;
+  color: black;
 }
 
 .quem-somos {
@@ -42,11 +42,12 @@ body {
 
 .cards-wrapper {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 1.5rem;
+  padding: 0 1rem;
 }
 
-.card-container {
+.sobre-nos.card-container {
   background-color: #F2EAD3;
   color: #333;
   border-radius: 12px;
@@ -84,4 +85,35 @@ body {
   font-size: 0.9rem;
   line-height: 1.5;
   color: #444;
+}
+
+/* Media Queries para Responsividade */
+@media (max-width: 768px) {
+  .cards-wrapper {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 0;
+  }
+  
+  .card-container img {
+    height: 250px;
+  }
+  
+  #sobre-nos {
+    padding: 2rem 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .cards-wrapper {
+    gap: 0.8rem;
+  }
+  
+  .card-container img {
+    height: 200px;
+  }
+  
+  .card-content {
+    padding: 0.8rem;
+  }
 }

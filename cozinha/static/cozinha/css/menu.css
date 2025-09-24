@@ -42,3 +42,19 @@
     border-bottom: 2px dotted #A39671;
     background: none;
 }
+
+@media (max-width: 768px) {
+    #menu-section {
+        flex-direction: column;
+        row-gap: 32px;
+    }
+
+    .menu-container {
+        width: 100%;
+    }
+
+    .menu-bar,
+    .menu-bar.dotted {
+        margin: 24px 0;
+    }
+}

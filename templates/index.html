@@ -22,6 +22,7 @@
     <link rel="stylesheet" href="{% static 'cozinha/css/display.css' %}">
     <link rel="stylesheet" href="{% static 'cozinha/css/servicos.css' %}">
     <link rel="stylesheet" href="{% static 'cozinha/css/footer.css' %}">
+    <link rel="stylesheet" href="{% static 'cozinha/css/modal-reservas.css' %}">
 </head>
 
 <body>
@@ -309,13 +310,13 @@
                         <h1 class="section-title">Entre em contato</h1>
                         <div class="section-title-bar"></div>
                     </div>
-                    {{ form.tipo_servico }}
+                    {{ form_contato.tipo_servico }}
                     <div class="formrow">
-                        {{ form.nome_cliente }}
-                        {{ form.email }}
+                        {{ form_contato.nome_cliente }}
+                        {{ form_contato.email }}
                     </div>
-                    {{ form.descricao }}
-                    <button id="submit">Enviar</button>
+                    {{ form_contato.descricao }}
+                    <button id="submit" name="form_contato">Enviar</button>
                 </form>
                 <img src="{% static 'cozinha/images/footer_mapa.svg' %}" width="435" height="254" alt="">
             </div>
@@ -364,6 +365,29 @@
             </div>
         </div>
     </footer>
+
+    <div id="reserva-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Reservar uma mesa</h2>
+            <form action="{% url 'index' %}" method="post">
+                {% csrf_token %}
+                <div class="formrow">
+                    {{ form_reserva.nome_cliente }}
+                    {{ form_reserva.telefone }}
+                </div>
+                <div class="formrow">
+                    <input type="hidden" id="timezone" name="timezone" value="-03:00" />
+                    {{ form_reserva.data_hora }}
+                </div>
+                <div class="formrow">
+                    {{ form_reserva.qtd_pessoas }}
+                </div>
+                {{ form_reserva.observacao }}
+                <button type="submit" name="form_reserva" id="submit">Reservar</button>
+            </form>
+        </div>
+    </div>
 
     <script type="module" src="{% static 'cozinha/scripts/modal.js' %}"></script>
     <script type="module" src="{% static 'cozinha/scripts/dropdown.js' %}"></script>

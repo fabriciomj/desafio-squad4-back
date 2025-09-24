@@ -2,20 +2,33 @@ from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from django.urls import reverse
 
-from .forms import ContatoForm
+from .forms import ContatoForm, ReservaForm
 from .models import Prato
 
 
 def index(request):
     destaques = Prato.objects.filter(tipo__exact="E")
+    form_contato = ContatoForm()
+    form_reserva = ReservaForm()
     if request.method == "POST":
-        form = ContatoForm(request.POST)
-        if form.is_valid():
-            form.save()
-            return HttpResponseRedirect(reverse("index"))
-    else:
-        form = ContatoForm()
-    return render(request, "index.html", {"form": form, "destaques": destaques})
+        POST = request.POST
+        if "form_contato" in POST:
+            form_contato = ContatoForm(POST)
+            if form_contato.is_valid():
+                form_contato.save()
+                return HttpResponseRedirect(reverse("index"))
+        elif "form_reserva" in POST:
+            form_reserva = ReservaForm(POST)
+            if form_reserva.is_valid():
+                form_reserva.save()
+                return HttpResponseRedirect(reverse("index"))
+
+    context = {
+        "destaques": destaques,
+        "form_contato": form_contato,
+        "form_reserva": form_reserva,
+    }
+    return render(request, "index.html", context)
 
 
 def cardapio(request):

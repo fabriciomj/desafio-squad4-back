@@ -7,17 +7,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const container = document.getElementById(targetId);
     if (!container) return;
 
-    // quantos itens estão marcados inicialmente como "extras" (hidden)
     const initialHiddenCards = Array.from(container.querySelectorAll('.menu-card.hidden'));
     const hiddenCount = initialHiddenCards.length;
 
-    // se não há extras, esconde o botão (opcional)
     if (hiddenCount === 0) {
       btn.style.display = 'none';
       return;
     }
 
-    // guarda a info para reutilizar
     btn.dataset.hiddenCount = String(hiddenCount);
     btn.dataset.expanded = 'false';
 
@@ -27,12 +24,10 @@ document.addEventListener('DOMContentLoaded', () => {
       const n = Number(btn.dataset.hiddenCount);
 
       if (!isExpanded) {
-        // mostrar os últimos n cards
         allCards.slice(-n).forEach(card => card.classList.remove('hidden'));
         btn.textContent = 'Ver menos';
         btn.dataset.expanded = 'true';
       } else {
-        // re-esconder os últimos n cards
         allCards.slice(-n).forEach(card => card.classList.add('hidden'));
         btn.textContent = 'Ver mais';
         btn.dataset.expanded = 'false';

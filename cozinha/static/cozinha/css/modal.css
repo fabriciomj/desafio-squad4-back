@@ -19,7 +19,7 @@
 
 .modal {
     position: fixed;
-    top: -100%;
+    top: -125%;
     left: 0;
     width: 100%;
     height: auto;
@@ -27,7 +27,7 @@
     overflow-y: auto;
     background-color: rgba(222, 215, 194, 1);
     transform: translateY(0);
-    transition: top 0.5s ease-in-out;
+    transition: top 0.6s ease-in-out;
     z-index: 10;
 }
 

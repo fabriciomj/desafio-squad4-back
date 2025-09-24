@@ -1,5 +1,5 @@
 #section2 {
-    padding: 152px;
+    padding: clamp(40px, 8vw, 100px) clamp(20px, 10vw, 150px) clamp(16px, 4vw, 30px);
     background-color: white;
 }
 

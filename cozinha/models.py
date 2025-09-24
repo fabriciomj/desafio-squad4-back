@@ -4,6 +4,7 @@ import uuid
 from django.core.validators import MaxValueValidator, MinValueValidator
 from django.db import models
 from PIL import Image
+from datetime import datetime, timedelta
 
 
 def upload_pratos(_, filename):
@@ -104,13 +105,13 @@ class Contato(models.Model):
 class Reserva(models.Model):
     nome_cliente = models.CharField(max_length=100, verbose_name="Nome do Cliente")
     telefone = models.CharField(max_length=11)
-    data = models.DateField()
-    horario = models.DateTimeField(verbose_name="Horário")
+    data_hora = models.DateTimeField(verbose_name="Data e Hora", unique=True)
     qtd_pessoas = models.IntegerField(
         verbose_name="Quantidade de pessoas",
         validators=[MinValueValidator(1), MaxValueValidator(10)],
     )
-    observacao = models.TextField(verbose_name="Observação")
+    observacao = models.TextField(blank=True, verbose_name="Observação")
 
     def __str__(self):
-        return f"{self.nome_cliente} ({self.telefone}) - {self.data} {self.horario}"
+        dh = self.data_hora
+        return f"{self.nome_cliente} ({self.telefone}) - {dh.day}/{dh.month}/{dh.year}"

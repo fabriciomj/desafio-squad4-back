@@ -8,9 +8,12 @@
     /* centraliza horizontalmente */
     display: block;
     align-items: center;
-    z-index: 10;
+    z-index: 5;
     /* garante que fica por cima */
     margin-bottom: 30px;
+    background-color: red;
+    /* largura igual a pagina */
+    width: 80vw;
 }
 
 .carousel-track {
@@ -91,4 +94,60 @@
     text-decoration: none;
     /* remove sublinhado padrão */
     transition: color 0.3s;
+}
+
+@media (max-width: 768px) {
+    .carousel-container {
+        width: 95vw;
+        /* ajusta largura para mobile */
+        bottom: 2%;
+        /* reduz a distância do bottom */
+        transform: translateX(-50%) scale(0.8);
+        /* centraliza e reduz o tamanho */
+    }
+
+    .carousel-track {
+        margin-bottom: 20px;
+        /* reduz margem */
+    }
+
+    .item {
+        margin: 0 20px;
+        /* reduz espaçamento entre itens */
+        width: 80px;
+        /* reduz largura dos itens */
+    }
+
+    .item img {
+        width: 120px;
+        /* reduz tamanho das imagens */
+        height: 120px;
+    }
+
+    .caption {
+        font-size: 0.9rem;
+        /* reduz tamanho da fonte */
+    }
+
+    .card-link {
+        font-size: 0.8rem;
+        /* reduz tamanho do link */
+    }
+
+    .nav {
+        top: 80px;
+        /* ajusta posição dos botões */
+        font-size: 1.5rem;
+        /* reduz tamanho dos botões */
+    }
+
+    .nav.prev {
+        left: -30px;
+        /* ajusta posição do botão anterior */
+    }
+
+    .nav.next {
+        right: -30px;
+        /* ajusta posição do botão próximo */
+    }
 }
